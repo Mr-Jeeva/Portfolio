@@ -1,6 +1,7 @@
 # jeeva_portfolio
 https://this-is-jeeva.web.app
 
-![image](https://user-images.githubusercontent.com/66915813/184848306-f281edec-8696-4ef6-b6a5-c1943f5ff02c.png)
+![cmd1](https://user-images.githubusercontent.com/66915813/184848794-a5a3c038-db6b-461a-a99d-4b7532cfc11b.PNG)
 
-![image](https://user-images.githubusercontent.com/66915813/184848350-102ef417-80cb-4781-aee1-8af9d022a751.png)
+![cmd2](https://user-images.githubusercontent.com/66915813/184848824-4dad7946-7d23-4895-94b4-12677d125d6e.PNG)
+
