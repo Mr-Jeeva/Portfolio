@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/resource/colors.dart';
 import 'package:portfolio/view/root.dart';
 
 void main() {
-  runApp(const AppTheme());
+  runApp(ProviderScope(child: const AppTheme()));
 }
 
 class AppTheme extends StatelessWidget {

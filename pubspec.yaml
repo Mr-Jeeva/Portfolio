@@ -12,9 +12,9 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.2
   google_fonts: ^3.0.1
-  font_awesome_flutter: ^10.1.0
+  flutter_svg: ^1.1.1+1 # svg
+  flutter_riverpod: ^1.0.4 # state management
 
 dev_dependencies:
   flutter_test:
@@ -24,5 +24,11 @@ dev_dependencies:
   #flutter_lints: ^2.0.0
 
 flutter:
-
   uses-material-design: true
+  assets:
+    - assets/svg/
+
+  fonts:
+    - family: sfmono
+      fonts:
+        - asset: fonts/sfmono.otf
