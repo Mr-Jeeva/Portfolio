@@ -16,7 +16,6 @@ class IntroContent extends StatefulWidget {
 class _IntroContentState extends State<IntroContent> {
   @override
   Widget build(BuildContext context) {
-    print("curWidth -> ${AppClass().getMqWidth(context)}");
     return Resposive(
       tabView: IntroTab(),
       mobileView: IntroMobile(),

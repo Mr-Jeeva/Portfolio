@@ -18,7 +18,6 @@ class _RightPaneState extends State<RightPane> {
         child: Container(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
-            mainAxisSize: MainAxisSize.min,
             children: [
               Expanded(
                   flex: 5,

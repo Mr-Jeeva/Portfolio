@@ -14,6 +14,7 @@ class IntroTab extends StatelessWidget {
       margin: EdgeInsets.only(
           left: AppClass().getMqWidth(context) * 0.01,
           top: AppClass().getMqHeight(context) * 0.07),
+      padding: EdgeInsets.only(bottom: 50),
       child: Row(
         children: [
           Column(
@@ -85,7 +86,7 @@ class IntroTab extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 20.0),
+                padding: const EdgeInsets.only(top: 30.0),
                 child: InkWell(
                   onTap: () {},
                   child: Container(

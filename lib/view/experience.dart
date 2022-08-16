@@ -19,7 +19,7 @@ class _ExperienceState extends State<Experience> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "Testing CI/CD WorkFlow",
+            "DayEnd",
             style: TextStyle(fontSize: 30),
           )
         ],

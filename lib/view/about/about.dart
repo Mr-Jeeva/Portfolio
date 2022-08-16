@@ -17,11 +17,9 @@ class _AboutState extends State<About> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(bottom: 70),
       margin: EdgeInsets.only(
           left: AppClass().getMqWidth(context) * 0.06,
-          right: AppClass().getMqWidth(context) * 0.06,
-          top: AppClass().getMqHeight(context) * 0.06),
+          right: AppClass().getMqWidth(context) * 0.06),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
