@@ -31,7 +31,6 @@ class _ActionBarState extends State<ActionBar> {
           return Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Text(scrType.name),
               InkWell(
                 onTap: () {},
                 child: Padding(

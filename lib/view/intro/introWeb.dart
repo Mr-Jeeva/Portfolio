@@ -11,10 +11,10 @@ class IntroWeb extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.transparent,
-      height: AppClass().getMqHeight(context) - 70,
+      height: AppClass().getMqHeight(context) - 130,
       margin: EdgeInsets.only(
           left: AppClass().getMqWidth(context) * 0.01,
-          top: AppClass().getMqHeight(context) * 0.07),
+          top: AppClass().getMqHeight(context) * 0.1),
       child: Row(
         children: [
           Column(
@@ -86,7 +86,7 @@ class IntroWeb extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 55),
+                padding: EdgeInsets.only(top: 50),
                 child: InkWell(
                   onTap: () {},
                   child: Container(
