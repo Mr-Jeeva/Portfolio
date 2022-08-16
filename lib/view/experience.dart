@@ -16,22 +16,12 @@ class _ExperienceState extends State<Experience> {
       height: AppClass().getMqHeight(context),
       color: Colors.orange,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(
-            child: Container(
-              color: Colors.blue,
-            ),
-          ),
-          Expanded(
-            child: Container(
-              color: Colors.yellowAccent,
-            ),
-          ),
-          Expanded(
-            child: Container(
-              color: Colors.black,
-            ),
-          ),
+          Text(
+            "Testing CI/CD WorkFlow",
+            style: TextStyle(fontSize: 30),
+          )
         ],
       ),
     );
