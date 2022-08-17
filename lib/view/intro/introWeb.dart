@@ -20,7 +20,7 @@ class IntroWeb extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 8.0),
+                padding: const EdgeInsets.only(left: 8.0, top: 50),
                 child: Text(
                   'Hi, my name is',
                   style: TextStyle(
@@ -85,7 +85,7 @@ class IntroWeb extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 50, bottom: 110),
+                padding: EdgeInsets.only(top: 50, bottom: 70),
                 child: InkWell(
                   onTap: () {},
                   child: Container(

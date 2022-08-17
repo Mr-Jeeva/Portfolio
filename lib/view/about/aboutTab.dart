@@ -1,27 +1,25 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../controller/generalController.dart';
 import '../../resource/appClass.dart';
 import '../../resource/colors.dart';
 
-class AboutWeb extends ConsumerStatefulWidget {
-  const AboutWeb({Key? key}) : super(key: key);
+class AboutTab extends StatefulWidget {
+  const AboutTab({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<AboutWeb> createState() => _AboutWebState();
+  State<AboutTab> createState() => _AboutTabState();
 }
 
-class _AboutWebState extends ConsumerState<AboutWeb> {
+class _AboutTabState extends State<AboutTab> {
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
           left: AppClass().getMqWidth(context) * 0.03,
           right: AppClass().getMqWidth(context) * 0.03),
-      padding: EdgeInsets.only(bottom: 70),
+      padding: EdgeInsets.only(bottom: 50),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -170,62 +168,6 @@ class _AboutWebState extends ConsumerState<AboutWeb> {
                   ],
                 ),
               ),
-              Expanded(
-                  flex: 2,
-                  child: Column(
-                    children: [
-                      Consumer(builder: (context, ref, child) {
-                        var data = ref.watch(hoverProvider);
-                        bool isHovered = (data == "profilePic");
-                        return Stack(
-                          children: [
-                            Container(
-                              width: AppClass().getMqWidth(context) *
-                                  (isHovered ? 0.22 : 0.225),
-                              height: AppClass().getMqWidth(context) *
-                                  (isHovered ? 0.22 : 0.225),
-                              margin: EdgeInsets.only(top: 10, left: 10),
-                              decoration: BoxDecoration(
-                                  color: Colors.transparent,
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(5.0)),
-                                  border: Border.all(
-                                      color: AppColors().neonColor,
-                                      width: 1.5)),
-                            ),
-                            InkWell(
-                              onTap: () {},
-                              onHover: (bol) {
-                                if (bol) {
-                                  ref.read(hoverProvider.notifier).state =
-                                      "profilePic";
-                                } else {
-                                  ref.read(hoverProvider.notifier).state = "";
-                                }
-                              },
-                              child: Container(
-                                width: AppClass().getMqWidth(context) * 0.22,
-                                height: AppClass().getMqWidth(context) * 0.22,
-                                decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(5.0)),
-                                    image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        colorFilter: ColorFilter.mode(
-                                            AppColors().primaryColor,
-                                            isHovered
-                                                ? BlendMode.lighten
-                                                : BlendMode.color),
-                                        image: AssetImage(
-                                            'assets/svg/profilePic.jpg')),
-                                    color: Colors.transparent),
-                              ),
-                            ),
-                          ],
-                        );
-                      }),
-                    ],
-                  ))
             ],
           )
         ],
