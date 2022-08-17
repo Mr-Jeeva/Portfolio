@@ -7,11 +7,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/controller/generalController.dart';
 import 'package:portfolio/resource/appClass.dart';
 import 'package:portfolio/view/about/about.dart';
-import 'package:portfolio/view/experience.dart';
+import 'package:portfolio/view/experience/experience.dart';
 import 'package:portfolio/view/intro/intro.dart';
 import 'package:portfolio/view/widget/appBar.dart';
 import 'package:portfolio/view/widget/leftPane.dart';
 import 'package:portfolio/view/widget/rightPane.dart';
+import 'package:portfolio/view/work/work.dart';
 
 class RootScreen extends ConsumerStatefulWidget {
   const RootScreen({Key? key}) : super(key: key);
@@ -23,6 +24,7 @@ class RootScreen extends ConsumerStatefulWidget {
 class _RootScreenState extends ConsumerState<RootScreen> {
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
       child: Scaffold(
         body: NotificationListener<UserScrollNotification>(
@@ -57,23 +59,27 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                   );
                 }),
                 Expanded(
-                  child: Row(
-                    children: [
-                      LeftPane(),
-                      Expanded(
-                          flex: 8,
-                          child: SingleChildScrollView(
-                            child: Column(
-                              children: [
-                                IntroContent(),
-                                About(),
-                                Experience(),
-                              ],
-                            ),
-                          )),
-                      RightPane(),
-                    ],
-                  ),
+                  child: () {
+                    ScreenType scrType = AppClass().getScreenType(context);
+                    return Row(
+                      children: [
+                        scrType == ScreenType.mobile ? SizedBox() : LeftPane(),
+                        Expanded(
+                            flex: 8,
+                            child: SingleChildScrollView(
+                              child: Column(
+                                children: [
+                                  IntroContent(),
+                                  About(),
+                                  Experience(),
+                                  Work()
+                                ],
+                              ),
+                            )),
+                        scrType == ScreenType.mobile ? SizedBox() : RightPane(),
+                      ],
+                    );
+                  } (),
                 ),
               ],
             ),

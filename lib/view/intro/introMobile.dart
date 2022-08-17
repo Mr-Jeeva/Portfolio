@@ -11,8 +11,7 @@ class IntroMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.transparent,
-      height: AppClass().getMqHeight(context) - 80,
-      margin: EdgeInsets.only(left: AppClass().getMqWidth(context) * 0.03),
+      height: AppClass().getMqHeight(context) - 50,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -91,7 +90,7 @@ class IntroMobile extends StatelessWidget {
                   onTap: () {},
                   child: Container(
                     height: AppClass().getMqHeight(context) * 0.09,
-                    width: AppClass().getMqWidth(context) * 0.4,
+                    width: AppClass().getMqWidth(context) * 0.45,
                     decoration: BoxDecoration(
                         color: Colors.transparent,
                         borderRadius: BorderRadius.all(Radius.circular(3.0)),

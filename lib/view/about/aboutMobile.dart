@@ -17,8 +17,8 @@ class _AboutMobileState extends State<AboutMobile> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
-          left: AppClass().getMqWidth(context) * 0.03,
-          right: AppClass().getMqWidth(context) * 0.03),
+          left: AppClass().getMqWidth(context) * 0.1,
+          right: AppClass().getMqWidth(context) * 0.1),
       padding: EdgeInsets.only(bottom: 30),
       child: Column(
         mainAxisSize: MainAxisSize.max,
