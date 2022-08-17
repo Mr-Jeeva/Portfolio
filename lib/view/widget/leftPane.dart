@@ -24,8 +24,7 @@ class _LeftPaneState extends ConsumerState<LeftPane> {
             Expanded(
                 flex: 5,
                 child: Container(
-                  child:
-                  Consumer(builder: (context, ref, child) {
+                  child: Consumer(builder: (context, ref, child) {
                     String val = ref.watch(hoverProvider);
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 15.0),
@@ -39,22 +38,17 @@ class _LeftPaneState extends ConsumerState<LeftPane> {
                               onTap: () {},
                               onHover: (bol) {
                                 if (bol) {
-                                  ref
-                                      .read(hoverProvider.notifier)
-                                      .state = "git";
+                                  ref.read(hoverProvider.notifier).state =
+                                      "git";
                                 } else {
-                                  ref
-                                      .read(hoverProvider.notifier)
-                                      .state = "";
+                                  ref.read(hoverProvider.notifier).state = "";
                                 }
                               },
                               child: Container(
                                 margin: EdgeInsets.only(
                                     bottom: val == "git" ? 5.0 : 0),
-                                padding: const EdgeInsets.only(
-                                    bottom: 8.0),
-                                child: SvgPicture.asset(
-                                    'assets/svg/github.svg',
+                                padding: const EdgeInsets.only(bottom: 8.0),
+                                child: SvgPicture.asset('assets/svg/github.svg',
                                     color: val == "git"
                                         ? AppColors().neonColor
                                         : AppColors().textColor,
@@ -68,20 +62,16 @@ class _LeftPaneState extends ConsumerState<LeftPane> {
                               onTap: () {},
                               onHover: (bol) {
                                 if (bol) {
-                                  ref
-                                      .read(hoverProvider.notifier)
-                                      .state = "insta";
+                                  ref.read(hoverProvider.notifier).state =
+                                      "insta";
                                 } else {
-                                  ref
-                                      .read(hoverProvider.notifier)
-                                      .state = "";
+                                  ref.read(hoverProvider.notifier).state = "";
                                 }
                               },
                               child: Container(
                                 margin: EdgeInsets.only(
                                     bottom: val == "insta" ? 5.0 : 0),
-                                padding: const EdgeInsets.only(
-                                    bottom: 8.0),
+                                padding: const EdgeInsets.only(bottom: 8.0),
                                 child: SvgPicture.asset(
                                     'assets/svg/instagram.svg',
                                     color: val == "insta"
@@ -97,20 +87,16 @@ class _LeftPaneState extends ConsumerState<LeftPane> {
                               onTap: () {},
                               onHover: (bol) {
                                 if (bol) {
-                                  ref
-                                      .read(hoverProvider.notifier)
-                                      .state = "linkedIn";
+                                  ref.read(hoverProvider.notifier).state =
+                                      "linkedIn";
                                 } else {
-                                  ref
-                                      .read(hoverProvider.notifier)
-                                      .state = "";
+                                  ref.read(hoverProvider.notifier).state = "";
                                 }
                               },
                               child: Container(
                                 margin: EdgeInsets.only(
                                     bottom: val == "linkedIn" ? 5.0 : 0),
-                                padding: const EdgeInsets.only(
-                                    bottom: 8.0),
+                                padding: const EdgeInsets.only(bottom: 8.0),
                                 child: SvgPicture.asset(
                                     'assets/svg/linkedIn.svg',
                                     color: val == "linkedIn"
@@ -126,20 +112,16 @@ class _LeftPaneState extends ConsumerState<LeftPane> {
                               onTap: () {},
                               onHover: (bol) {
                                 if (bol) {
-                                  ref
-                                      .read(hoverProvider.notifier)
-                                      .state = "twitter";
+                                  ref.read(hoverProvider.notifier).state =
+                                      "twitter";
                                 } else {
-                                  ref
-                                      .read(hoverProvider.notifier)
-                                      .state = "";
+                                  ref.read(hoverProvider.notifier).state = "";
                                 }
                               },
                               child: Container(
                                 margin: EdgeInsets.only(
                                     bottom: val == "twitter" ? 5.0 : 0),
-                                padding: const EdgeInsets.only(
-                                    bottom: 8.0),
+                                padding: const EdgeInsets.only(bottom: 8.0),
                                 child: SvgPicture.asset(
                                     'assets/svg/twitter.svg',
                                     color: val == "twitter"
@@ -155,20 +137,16 @@ class _LeftPaneState extends ConsumerState<LeftPane> {
                               onTap: () {},
                               onHover: (bol) {
                                 if (bol) {
-                                  ref
-                                      .read(hoverProvider.notifier)
-                                      .state = "stackoverflow";
+                                  ref.read(hoverProvider.notifier).state =
+                                      "stackoverflow";
                                 } else {
-                                  ref
-                                      .read(hoverProvider.notifier)
-                                      .state = "";
+                                  ref.read(hoverProvider.notifier).state = "";
                                 }
                               },
                               child: Container(
                                 margin: EdgeInsets.only(
                                     bottom: val == "stackoverflow" ? 5.0 : 0),
-                                padding: const EdgeInsets.only(
-                                    bottom: 8.0),
+                                padding: const EdgeInsets.only(bottom: 8.0),
                                 child: SvgPicture.asset(
                                     'assets/svg/stackoverflow.svg',
                                     color: val == "stackoverflow"
@@ -185,9 +163,9 @@ class _LeftPaneState extends ConsumerState<LeftPane> {
                 )),
             Expanded(
                 child: Container(
-                  width: 1,
-                  color: AppColors().textColor,
-                ))
+              width: 1,
+              color: AppColors().textColor,
+            ))
           ],
         ));
   }

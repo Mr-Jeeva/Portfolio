@@ -25,8 +25,7 @@ class _RightPaneState extends State<RightPane> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Padding(
-                        padding:
-                        const EdgeInsets.only(bottom: 25),
+                        padding: const EdgeInsets.only(bottom: 25),
                         child: RotatedBox(
                             quarterTurns: 1,
                             child: Text(
@@ -42,9 +41,9 @@ class _RightPaneState extends State<RightPane> {
                   )),
               Expanded(
                   child: Container(
-                    width: 1,
-                    color: Colors.white,
-                  ))
+                width: 1,
+                color: Colors.white,
+              ))
             ],
           ),
         ));

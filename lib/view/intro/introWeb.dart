@@ -11,7 +11,6 @@ class IntroWeb extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.transparent,
-      height: AppClass().getMqHeight(context) - 130,
       margin: EdgeInsets.only(
           left: AppClass().getMqWidth(context) * 0.01,
           top: AppClass().getMqHeight(context) * 0.1),
@@ -65,7 +64,7 @@ class IntroWeb extends StatelessWidget {
                   child: RichText(
                       text: TextSpan(
                           text:
-                          'I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at ',
+                              'I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at ',
                           style: GoogleFonts.roboto(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -73,20 +72,20 @@ class IntroWeb extends StatelessWidget {
                             fontSize: 18,
                           ),
                           children: <TextSpan>[
-                            TextSpan(
-                              text: 'NetAccess.',
-                              style: GoogleFonts.roboto(
-                                color: AppColors().neonColor,
-                                letterSpacing: 1,
-                                height: 1.5,
-                                fontSize: 18,
-                              ),
-                            )
-                          ])),
+                        TextSpan(
+                          text: 'NetAccess.',
+                          style: GoogleFonts.roboto(
+                            color: AppColors().neonColor,
+                            letterSpacing: 1,
+                            height: 1.5,
+                            fontSize: 18,
+                          ),
+                        )
+                      ])),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 50),
+                padding: EdgeInsets.only(top: 50, bottom: 110),
                 child: InkWell(
                   onTap: () {},
                   child: Container(

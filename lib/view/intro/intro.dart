@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/resource/appClass.dart';
 import 'package:portfolio/responsive.dart';
 import 'package:portfolio/view/intro/introMobile.dart';
 import 'package:portfolio/view/intro/introWeb.dart';

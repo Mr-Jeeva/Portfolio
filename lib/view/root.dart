@@ -50,7 +50,7 @@ class _RootScreenState extends ConsumerState<RootScreen> {
               children: [
                 Consumer(builder: (context, ref, child) {
                   var isScrollingUp = ref.watch(scrollControlProvider);
-                  return  AnimatedOpacity(
+                  return AnimatedOpacity(
                     opacity: isScrollingUp ? 1.0 : 0.0,
                     duration: const Duration(milliseconds: 500),
                     child: ActionBar(),

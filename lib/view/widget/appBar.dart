@@ -24,13 +24,16 @@ class _ActionBarState extends State<ActionBar> {
             return Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                IconButton(onPressed: () {}, icon: Icon(Icons.menu_rounded, size: 25))
+                Text(scrType.name),
+                IconButton(
+                    onPressed: () {}, icon: Icon(Icons.menu_rounded, size: 25))
               ],
             );
           }
           return Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
+              Text(scrType.name),
               InkWell(
                 onTap: () {},
                 child: Padding(

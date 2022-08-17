@@ -11,12 +11,13 @@ class IntroMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.transparent,
-      margin: EdgeInsets.only(
-          left: AppClass().getMqWidth(context) * 0.01,
-          top: AppClass().getMqHeight(context) * 0.1),
-      child: Row(
+      height: AppClass().getMqHeight(context) - 80,
+      margin: EdgeInsets.only(left: AppClass().getMqWidth(context) * 0.03),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
@@ -64,7 +65,7 @@ class IntroMobile extends StatelessWidget {
                   child: RichText(
                       text: TextSpan(
                           text:
-                          'I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at ',
+                              'I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at ',
                           style: GoogleFonts.roboto(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -72,20 +73,20 @@ class IntroMobile extends StatelessWidget {
                             fontSize: 15,
                           ),
                           children: <TextSpan>[
-                            TextSpan(
-                              text: 'NetAccess.',
-                              style: GoogleFonts.roboto(
-                                color: AppColors().neonColor,
-                                letterSpacing: 1,
-                                height: 1.5,
-                                fontSize: 15,
-                              ),
-                            )
-                          ])),
+                        TextSpan(
+                          text: 'NetAccess.',
+                          style: GoogleFonts.roboto(
+                            color: AppColors().neonColor,
+                            letterSpacing: 1,
+                            height: 1.5,
+                            fontSize: 15,
+                          ),
+                        )
+                      ])),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 60.0, bottom: 50.0),
+                padding: const EdgeInsets.only(top: 60.0),
                 child: InkWell(
                   onTap: () {},
                   child: Container(

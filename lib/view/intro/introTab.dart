@@ -86,7 +86,7 @@ class IntroTab extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 30.0),
+                padding: const EdgeInsets.only(top: 30.0, bottom: 50),
                 child: InkWell(
                   onTap: () {},
                   child: Container(
