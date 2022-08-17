@@ -19,7 +19,7 @@ class _ExperienceState extends State<Experience> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "DayEnd",
+            "08/17/2022",
             style: TextStyle(fontSize: 30),
           )
         ],
