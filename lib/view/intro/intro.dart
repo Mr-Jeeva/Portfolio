@@ -15,7 +15,7 @@ class IntroContent extends StatefulWidget {
 class _IntroContentState extends State<IntroContent> {
   @override
   Widget build(BuildContext context) {
-    return Resposive(
+    return Responsive(
       tabView: IntroTab(),
       mobileView: IntroMobile(),
       webView: IntroWeb(),

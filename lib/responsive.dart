@@ -1,17 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:portfolio/resource/appClass.dart';
 
-class Resposive extends StatefulWidget {
+class Responsive extends StatefulWidget {
   var mobileView, webView, tabView;
 
-  Resposive({Key? key, this.mobileView, this.tabView, this.webView})
+  Responsive({Key? key, this.mobileView, this.tabView, this.webView})
       : super(key: key);
 
   @override
-  State<Resposive> createState() => _ResposiveState();
+  State<Responsive> createState() => _ResponsiveState();
 }
 
-class _ResposiveState extends State<Resposive> {
+class _ResponsiveState extends State<Responsive> {
   @override
   Widget build(BuildContext context) {
     ScreenType scrType = AppClass().getScreenType(context);

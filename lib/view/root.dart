@@ -14,6 +14,8 @@ import 'package:portfolio/view/widget/leftPane.dart';
 import 'package:portfolio/view/widget/rightPane.dart';
 import 'package:portfolio/view/work/work.dart';
 
+import 'contact/contact.dart';
+
 class RootScreen extends ConsumerStatefulWidget {
   const RootScreen({Key? key}) : super(key: key);
 
@@ -66,12 +68,14 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                         Expanded(
                             flex: 8,
                             child: SingleChildScrollView(
+                              controller: AppClass().controller,
                               child: Column(
                                 children: [
                                   IntroContent(),
                                   About(),
                                   Experience(),
-                                  Work()
+                                  Work(),
+                                  Contact()
                                 ],
                               ),
                             )),

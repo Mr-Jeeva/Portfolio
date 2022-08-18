@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../controller/generalController.dart';
 import '../../resource/appClass.dart';
@@ -35,7 +36,10 @@ class _LeftPaneState extends ConsumerState<LeftPane> {
                           Container(
                             height: AppClass().getMqHeight(context) * 0.07,
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () async {
+                                await launchUrl(
+                                    Uri.parse("https://github.com/jeeva-HBK"));
+                              },
                               onHover: (bol) {
                                 if (bol) {
                                   ref.read(hoverProvider.notifier).state =
@@ -84,7 +88,10 @@ class _LeftPaneState extends ConsumerState<LeftPane> {
                           Container(
                             height: AppClass().getMqHeight(context) * 0.07,
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () async {
+                                await launchUrl(Uri.parse(
+                                    "https://www.linkedin.com/in/jeeva-hbk/"));
+                              },
                               onHover: (bol) {
                                 if (bol) {
                                   ref.read(hoverProvider.notifier).state =
@@ -134,7 +141,10 @@ class _LeftPaneState extends ConsumerState<LeftPane> {
                           Container(
                             height: AppClass().getMqHeight(context) * 0.07,
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () async {
+                                await launchUrl(Uri.parse(
+                                    "https://stackoverflow.com/users/19705360/mr-jeeva"));
+                              },
                               onHover: (bol) {
                                 if (bol) {
                                   ref.read(hoverProvider.notifier).state =
