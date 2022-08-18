@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/resource/colors.dart';
+
+import '../model/experienceModel.dart';
+import '../model/workModel.dart';
 
 enum ScreenType { mobile, tab, web }
 
@@ -46,6 +50,222 @@ class AppClass {
         tech2: "Tablet"),
   ];
 
+  List<ExperienceModel> experienceList = [
+    ExperienceModel(
+        desig: "Software Engineer",
+        compName: "Netaccess",
+        duration: "Jun 2022 - Present",
+        points: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.arrow_right,
+                    color: AppColors().neonColor,
+                    size: 20,
+                  ),
+                  Text(
+                    'sample test about the work statuary and atmosphere, qerjqwjqwiojeqwjeq ',
+                    style: TextStyle(
+                        color: AppColors().textLight,
+                        letterSpacing: 1,
+                        height: 1.5,
+                        fontSize: 14,
+                        fontFamily: 'sfmono'),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.arrow_right,
+                    color: AppColors().neonColor,
+                    size: 20,
+                  ),
+                  Text(
+                    'sample test about the work statuary and atmosphere. asdhasjdhajhdajasbdjbasjkdasjkbldjkabsdjkablsdasdas',
+                    style: TextStyle(
+                        color: AppColors().textLight,
+                        letterSpacing: 1,
+                        height: 1.5,
+                        fontSize: 14,
+                        fontFamily: 'sfmono'),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.arrow_right,
+                    color: AppColors().neonColor,
+                    size: 20,
+                  ),
+                  Text(
+                    'sample test about the work statuary and atmosphere, ',
+                    style: TextStyle(
+                        color: AppColors().textLight,
+                        letterSpacing: 1,
+                        height: 1.5,
+                        fontSize: 14,
+                        fontFamily: 'sfmono'),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        )),
+    ExperienceModel(
+        desig: "Mobile App Developer",
+        compName: "Rax-Tech International",
+        duration: "Aug 2020 - Jun 2022",
+        points: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.arrow_right,
+                    color: AppColors().neonColor,
+                    size: 20,
+                  ),
+                  Text(
+                    'sample test about the work statuary and atmosphere, qerjqwjqwiojeqwjeq ',
+                    style: TextStyle(
+                        color: AppColors().textLight,
+                        letterSpacing: 1,
+                        height: 1.5,
+                        fontSize: 14,
+                        fontFamily: 'sfmono'),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.arrow_right,
+                    color: AppColors().neonColor,
+                    size: 20,
+                  ),
+                  Text(
+                    'sample test about the work statuary and atmosphere. asdhasjdhajhdajasbdjbasjkdasjkbldjkabsdjkablsdasdas',
+                    style: TextStyle(
+                        color: AppColors().textLight,
+                        letterSpacing: 1,
+                        height: 1.5,
+                        fontSize: 14,
+                        fontFamily: 'sfmono'),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.arrow_right,
+                    color: AppColors().neonColor,
+                    size: 20,
+                  ),
+                  Text(
+                    'sample test about the work statuary and atmosphere, ',
+                    style: TextStyle(
+                        color: AppColors().textLight,
+                        letterSpacing: 1,
+                        height: 1.5,
+                        fontSize: 14,
+                        fontFamily: 'sfmono'),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        )),
+    ExperienceModel(
+        desig: "Android Developer",
+        compName: "Techno Kryon",
+        duration: "Nov 2019 - Mar 2020",
+        points: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.arrow_right,
+                    color: AppColors().neonColor,
+                    size: 20,
+                  ),
+                  Text(
+                    'sample test about the work statuary and atmosphere, qerjqwjqwiojeqwjeq ',
+                    style: TextStyle(
+                        color: AppColors().textLight,
+                        letterSpacing: 1,
+                        height: 1.5,
+                        fontSize: 14,
+                        fontFamily: 'sfmono'),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.arrow_right,
+                    color: AppColors().neonColor,
+                    size: 20,
+                  ),
+                  Text(
+                    'sample test about the work statuary and atmosphere. asdhasjdhajhdajasbdjbasjkdasjkbldjkabsdjkablsdasdas',
+                    style: TextStyle(
+                        color: AppColors().textLight,
+                        letterSpacing: 1,
+                        height: 1.5,
+                        fontSize: 14,
+                        fontFamily: 'sfmono'),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.arrow_right,
+                    color: AppColors().neonColor,
+                    size: 20,
+                  ),
+                  Text(
+                    'sample test about the work statuary and atmosphere, ',
+                    style: TextStyle(
+                        color: AppColors().textLight,
+                        letterSpacing: 1,
+                        height: 1.5,
+                        fontSize: 14,
+                        fontFamily: 'sfmono'),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        )),
+  ];
+
   factory AppClass() {
     return _mAppClass;
   }
@@ -78,19 +298,4 @@ class AppClass {
     }
     return ScreenType.tab;
   }
-}
-
-class WorkModel {
-  String? projectTitle;
-  String? projectContent;
-  String? tech1;
-  String? tech2;
-  String? tech3;
-
-  WorkModel(
-      {this.projectTitle,
-      this.projectContent,
-      this.tech1,
-      this.tech2,
-      this.tech3});
 }

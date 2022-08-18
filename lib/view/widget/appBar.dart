@@ -40,11 +40,11 @@ class _ActionBarState extends State<ActionBar> {
                   padding: const EdgeInsets.only(right: 30.0),
                   child: Row(
                     children: [
-                      /* Text("01. ",
+                       Text("01. ",
                           style: TextStyle(
                               color: AppColors().neonColor,
                               fontSize: 13,
-                              fontFamily: 'sfmono')),*/
+                              fontFamily: 'sfmono')),
                       Text("About",
                           style: TextStyle(
                               color: AppColors().textColor,
