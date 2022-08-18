@@ -8,7 +8,7 @@ import 'package:portfolio/controller/generalController.dart';
 import 'package:portfolio/resource/appClass.dart';
 
 import '../../resource/colors.dart';
-
+// testGit
 class WorkWeb extends ConsumerStatefulWidget {
   const WorkWeb({Key? key}) : super(key: key);
 
@@ -40,7 +40,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
           ),
         ),
         Container(
-          padding: EdgeInsets.only(top: 30.0, bottom: 60.0),
+          padding: EdgeInsets.only(top: 30.0, bottom: 70.0),
           child: StaggeredGrid.count(
             crossAxisCount: 3,
             mainAxisSpacing: 4,
