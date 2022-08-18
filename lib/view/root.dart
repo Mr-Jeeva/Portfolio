@@ -24,7 +24,6 @@ class RootScreen extends ConsumerStatefulWidget {
 class _RootScreenState extends ConsumerState<RootScreen> {
   @override
   Widget build(BuildContext context) {
-
     return SafeArea(
       child: Scaffold(
         body: NotificationListener<UserScrollNotification>(
@@ -79,7 +78,7 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                         scrType == ScreenType.mobile ? SizedBox() : RightPane(),
                       ],
                     );
-                  } (),
+                  }(),
                 ),
               ],
             ),

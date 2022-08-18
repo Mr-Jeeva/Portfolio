@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/resource/appClass.dart';
 
 class Experience extends StatefulWidget {
   const Experience({Key? key}) : super(key: key);
@@ -14,7 +13,6 @@ class _ExperienceState extends State<Experience> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.orange,
-      height: AppClass().getMqHeight(context),
     );
   }
 }
