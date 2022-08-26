@@ -288,7 +288,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
     ];
 
     return Container(
-      height: AppClass().getMqHeight(context) - 100,
+      height: AppClass().getMqHeight(context) - 70,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,

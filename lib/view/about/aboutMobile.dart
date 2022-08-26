@@ -87,7 +87,7 @@ class _AboutMobileState extends State<AboutMobile> {
                     Padding(
                       padding: const EdgeInsets.only(top: 10.0),
                       child: Text(
-                        '''I also freelance for various clients across the world. If you've any ideas or just want to say hi to me, feel free to contact me!''',
+                        '''I also freelance for various clients across the world. If you've any ideas about creating a project or something, feel free to contact me!''',
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,

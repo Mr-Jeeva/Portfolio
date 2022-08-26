@@ -13,6 +13,7 @@ import 'package:portfolio/view/widget/appBar.dart';
 import 'package:portfolio/view/widget/leftPane.dart';
 import 'package:portfolio/view/widget/rightPane.dart';
 import 'package:portfolio/view/work/work.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 
 import 'contact/contact.dart';
 
@@ -24,6 +25,8 @@ class RootScreen extends ConsumerStatefulWidget {
 }
 
 class _RootScreenState extends ConsumerState<RootScreen> {
+  final aScrollController = AutoScrollController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -56,7 +59,7 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                   return AnimatedOpacity(
                     opacity: isScrollingUp ? 1.0 : 0.0,
                     duration: const Duration(milliseconds: 500),
-                    child: ActionBar(),
+                    child: ActionBar(aScrollController),
                   );
                 }),
                 Expanded(
@@ -67,17 +70,35 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                         scrType == ScreenType.mobile ? SizedBox() : LeftPane(),
                         Expanded(
                             flex: 8,
-                            child: SingleChildScrollView(
-                              controller: AppClass().controller,
-                              child: Column(
-                                children: [
-                                  IntroContent(),
-                                  About(),
-                                  Experience(),
-                                  Work(),
-                                  Contact()
-                                ],
-                              ),
+                            child: ListView(
+                              controller: aScrollController,
+                              children: [
+                                AutoScrollTag(
+                                    key: ValueKey(0),
+                                    controller: aScrollController,
+                                    index: 0,
+                                    child: IntroContent(aScrollController)),
+                                AutoScrollTag(
+                                    key: ValueKey(1),
+                                    controller: aScrollController,
+                                    index: 1,
+                                    child: About()),
+                                AutoScrollTag(
+                                    key: ValueKey(2),
+                                    controller: aScrollController,
+                                    index: 2,
+                                    child: Experience()),
+                                AutoScrollTag(
+                                    key: ValueKey(3),
+                                    controller: aScrollController,
+                                    index: 3,
+                                    child: Work()),
+                                AutoScrollTag(
+                                    key: ValueKey(4),
+                                    controller: aScrollController,
+                                    index: 4,
+                                    child: Contact())
+                              ],
                             )),
                         scrType == ScreenType.mobile ? SizedBox() : RightPane(),
                       ],

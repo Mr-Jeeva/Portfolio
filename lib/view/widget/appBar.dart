@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:portfolio/controller/generalController.dart';
 import 'package:portfolio/resource/appClass.dart';
 import 'package:portfolio/resource/colors.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 
-class ActionBar extends StatefulWidget with PreferredSizeWidget {
-  const ActionBar({Key? key}) : super(key: key);
+class ActionBar extends ConsumerStatefulWidget with PreferredSizeWidget {
+  final AutoScrollController controller;
+
+  ActionBar(this.controller, {Key? key}) : super(key: key);
 
   @override
-  State<ActionBar> createState() => _ActionBarState();
+  ConsumerState<ActionBar> createState() => _ActionBarState();
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
-class _ActionBarState extends State<ActionBar> {
+class _ActionBarState extends ConsumerState<ActionBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,27 +40,53 @@ class _ActionBarState extends State<ActionBar> {
             children: [
               /*Text(scrType.name),*/
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  widget.controller.scrollToIndex(1,
+                      preferPosition: AutoScrollPosition.begin);
+                },
+                onHover: (bol) {
+                  if (bol) {
+                    ref.read(hoverProvider.notifier).state = "aboutTitle";
+                  } else {
+                    ref.read(hoverProvider.notifier).state = "";
+                  }
+                },
                 child: Padding(
                   padding: const EdgeInsets.only(right: 30.0),
                   child: Row(
                     children: [
-                       Text("01. ",
+                      Text("01. ",
                           style: TextStyle(
                               color: AppColors().neonColor,
                               fontSize: 13,
                               fontFamily: 'sfmono')),
-                      Text("About",
-                          style: TextStyle(
-                              color: AppColors().textColor,
-                              fontSize: 13,
-                              fontFamily: 'sfmono')),
+                      Consumer(builder: (context, ref, child) {
+                        String state = ref.watch(hoverProvider);
+                        bool isHovered = (state == "aboutTitle");
+                        return Text("About",
+                            style: TextStyle(
+                                color: isHovered
+                                    ? AppColors().neonColor
+                                    : AppColors().textColor,
+                                fontSize: 13,
+                                fontFamily: 'sfmono'));
+                      }),
                     ],
                   ),
                 ),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  widget.controller.scrollToIndex(2,
+                      preferPosition: AutoScrollPosition.begin);
+                },
+                onHover: (bol) {
+                  if (bol) {
+                    ref.read(hoverProvider.notifier).state = "expTitle";
+                  } else {
+                    ref.read(hoverProvider.notifier).state = "";
+                  }
+                },
                 child: Padding(
                   padding: const EdgeInsets.only(right: 30.0),
                   child: Row(
@@ -65,17 +96,33 @@ class _ActionBarState extends State<ActionBar> {
                               color: AppColors().neonColor,
                               fontSize: 13,
                               fontFamily: 'sfmono')),
-                      Text("Experience",
-                          style: TextStyle(
-                              color: AppColors().textColor,
-                              fontSize: 13,
-                              fontFamily: 'sfmono')),
+                      Consumer(builder: (context, ref, child) {
+                        String state = ref.watch(hoverProvider);
+                        bool isHovered = (state == "expTitle");
+                        return Text("Experience",
+                            style: TextStyle(
+                                color: isHovered
+                                    ? AppColors().neonColor
+                                    : AppColors().textColor,
+                                fontSize: 13,
+                                fontFamily: 'sfmono'));
+                      }),
                     ],
                   ),
                 ),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  widget.controller.scrollToIndex(3,
+                      preferPosition: AutoScrollPosition.begin);
+                },
+                onHover: (bol) {
+                  if (bol) {
+                    ref.read(hoverProvider.notifier).state = "workTitle";
+                  } else {
+                    ref.read(hoverProvider.notifier).state = "";
+                  }
+                },
                 child: Padding(
                   padding: const EdgeInsets.only(right: 30.0),
                   child: Row(
@@ -85,17 +132,34 @@ class _ActionBarState extends State<ActionBar> {
                               color: AppColors().neonColor,
                               fontSize: 13,
                               fontFamily: 'sfmono')),
-                      Text("Work",
-                          style: TextStyle(
-                              color: AppColors().textColor,
-                              fontSize: 13,
-                              fontFamily: 'sfmono')),
+                      Consumer(builder: (context, ref, child) {
+                        String state = ref.watch(hoverProvider);
+                        bool isHovered = (state == "workTitle");
+
+                        return Text("Work",
+                            style: TextStyle(
+                                color: isHovered
+                                    ? AppColors().neonColor
+                                    : AppColors().textColor,
+                                fontSize: 13,
+                                fontFamily: 'sfmono'));
+                      }),
                     ],
                   ),
                 ),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  widget.controller.scrollToIndex(4,
+                      preferPosition: AutoScrollPosition.begin);
+                },
+                onHover: (bol) {
+                  if (bol) {
+                    ref.read(hoverProvider.notifier).state = "contactTitle";
+                  } else {
+                    ref.read(hoverProvider.notifier).state = "";
+                  }
+                },
                 child: Padding(
                   padding: const EdgeInsets.only(right: 30.0),
                   child: Row(
@@ -105,9 +169,16 @@ class _ActionBarState extends State<ActionBar> {
                               color: AppColors().neonColor,
                               fontSize: 13,
                               fontFamily: 'sfmono')),
-                      Text("Contact",
-                          style: TextStyle(
-                              color: AppColors().textColor, fontSize: 13)),
+                      Consumer(builder: (context, ref, child) {
+                        String state = ref.watch(hoverProvider);
+                        bool isHovered = (state == "contactTitle");
+                        return Text("Contact",
+                            style: TextStyle(
+                                color: isHovered
+                                    ? AppColors().neonColor
+                                    : AppColors().textColor,
+                                fontSize: 13));
+                      }),
                     ],
                   ),
                 ),

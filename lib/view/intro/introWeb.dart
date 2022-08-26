@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 
 import '../../resource/appClass.dart';
 import '../../resource/colors.dart';
 
-class IntroWeb extends StatelessWidget {
-  const IntroWeb({Key? key}) : super(key: key);
+class IntroWeb extends StatefulWidget {
+  AutoScrollController aScrollController;
+  IntroWeb(this.aScrollController, {Key? key}) : super(key: key);
 
+  @override
+  State<IntroWeb> createState() => _IntroWebState();
+}
+
+class _IntroWebState extends State<IntroWeb> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -87,7 +94,10 @@ class IntroWeb extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(top: 50, bottom: 70),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    widget.aScrollController.scrollToIndex(1,
+                        preferPosition: AutoScrollPosition.begin);
+                  },
                   child: Container(
                     height: AppClass().getMqHeight(context) * 0.09,
                     width: AppClass().getMqWidth(context) * 0.2,
@@ -97,7 +107,7 @@ class IntroWeb extends StatelessWidget {
                         border: Border.all(
                             color: AppColors().neonColor, width: 1.5)),
                     child: Center(
-                      child: Text('Check out my work!',
+                      child: Text('Check Out My Work!',
                           style: TextStyle(
                               color: AppColors().neonColor,
                               fontSize: 13,
