@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/resource/colors.dart';
+import 'package:portfolio/resource/strings.dart';
+import 'package:portfolio/resource/styles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-import '../model/experienceModel.dart';
 import '../model/workModel.dart';
 
 enum ScreenType { mobile, tab, web }
@@ -10,6 +12,18 @@ class AppClass {
   static final AppClass _mAppClass = AppClass._internal();
   static BuildContext? lastContext;
   ScrollController controller = ScrollController();
+
+
+  /* URL */
+  static final resumeDownloadURL = '''https://jeeva-portfolio.s3.amazonaws.com/JEEVANANDHAM's+Resume.pdf''';
+
+  static final gitSafeC19 = '''https://github.com/jeeva-HBK/SafeC19''';
+  // static final gitHermarts = '''https://github.com/jeeva-HBK/SafeC19''';
+  static final gitWtIot = '''https://github.com/jeeva-HBK/AutoChem''';
+  static final gitAutoStabilizer = '''https://github.com/jeeva-HBK/AutoStabilizer''';
+  static final gitPAT = '''https://github.com/jeeva-HBK/PAT''';
+  // static final gitAVM = '''https://github.com/jeeva-HBK/SafeC19''';
+
   List<WorkModel> projectList = [
     WorkModel(
         projectTitle: "SafeC19",
@@ -69,10 +83,6 @@ class AppClass {
         .showSnackBar(SnackBar(content: Text(msg)));
   }
 
-  setLastContext(BuildContext context) {
-    lastContext = context;
-  }
-
   ScreenType getScreenType(BuildContext context) {
     double scrWidth = getMqWidth(context);
     if (scrWidth > 915) {
@@ -81,5 +91,23 @@ class AppClass {
       return ScreenType.mobile;
     }
     return ScreenType.tab;
+  }
+
+  downloadResume(context) async {
+    await launchUrl(Uri.parse(AppClass.resumeDownloadURL));
+  }
+
+  alertDialog(context, title, msg) {
+    showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+            title: Text(title, style: TxtStyle().boldWhite(context)),
+            content: Text(msg),
+            actions: [
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: Colors.green),
+                  onPressed: () => Navigator.pop(context),
+                  child: Text('Okay'))
+            ]));
   }
 }

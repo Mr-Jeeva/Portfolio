@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/controller/generalController.dart';
 import 'package:portfolio/resource/appClass.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../resource/colors.dart';
 
@@ -20,18 +21,28 @@ class _WorkWebState extends ConsumerState<WorkTab> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          'My Noteworthy Projects',
-          style: GoogleFonts.roboto(
-              color: AppColors().textColor,
-              letterSpacing: 1,
-              fontWeight: FontWeight.bold,
-              fontSize: 20),
+        RichText(
+          text: TextSpan(
+              text: "03.",
+              style: TextStyle(
+                  color: AppColors().neonColor,
+                  fontSize: 20,
+                  fontFamily: 'sfmono'),
+              children: <TextSpan>[
+                TextSpan(
+                  text: ' My Noteworthy Projects',
+                  style: GoogleFonts.roboto(
+                      color: AppColors().textColor,
+                      letterSpacing: 1,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                )
+              ]),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 8.0),
           child: Text(
-            'view the archives',
+            'some of my favorite projects',
             style: TextStyle(
                 color: AppColors().neonColor,
                 fontSize: 12,
@@ -74,7 +85,33 @@ class _WorkWebState extends ConsumerState<WorkTab> {
 
   Tile({required int index}) {
     return InkWell(
-      onTap: () {},
+      onTap: () async {
+        switch (index) {
+          case 0:
+            await launchUrl(Uri.parse(AppClass.gitSafeC19));
+            break;
+
+          case 1:
+            AppClass().alertDialog(context, 'Not Found', 'Sorry the project you requested not found in the repository');
+            break;
+
+          case 2:
+            await launchUrl(Uri.parse(AppClass.gitWtIot));
+            break;
+
+          case 3:
+            await launchUrl(Uri.parse(AppClass.gitAutoStabilizer));
+            break;
+
+          case 4:
+            await launchUrl(Uri.parse(AppClass.gitPAT));
+            break;
+
+          case 5:
+            AppClass().alertDialog(context, 'Not Found', 'Sorry the project you requested not found in the repository');
+            break;
+        }
+      },
       onHover: (bool) {
         if (bool) {
           ref.read(hoverProvider.notifier).state = "$index";

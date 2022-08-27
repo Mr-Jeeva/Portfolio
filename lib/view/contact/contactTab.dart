@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/resource/appClass.dart';
 
 import '../../resource/colors.dart';
+import '../../resource/strings.dart';
 
 class ContactTab extends StatefulWidget {
   const ContactTab({Key? key}) : super(key: key);
@@ -22,12 +23,24 @@ class _ContactTabState extends State<ContactTab> {
         children: [
           Column(
             children: [
-              Text(
-                '''What's next?''',
-                style: TextStyle(
-                    color: AppColors().neonColor,
-                    fontSize: 16,
-                    fontFamily: 'sfmono'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    '''04.''',
+                    style: TextStyle(
+                        color: AppColors().neonColor,
+                        fontSize: 14,
+                        fontFamily: 'sfmono'),
+                  ),
+                  Text(
+                    ''' What's next?''',
+                    style: TextStyle(
+                        color: AppColors().neonColor,
+                        fontSize: 16,
+                        fontFamily: 'sfmono'),
+                  ),
+                ],
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 8.0),
@@ -46,7 +59,7 @@ class _ContactTabState extends State<ContactTab> {
                 child: Container(
                   width: AppClass().getMqWidth(context) * 0.45,
                   child: Text(
-                    'Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!',
+                    Strings.endTxt,
                     textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
                       color: AppColors().textLight,
@@ -95,7 +108,7 @@ class _ContactTabState extends State<ContactTab> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  '''ref - Brittany Chiang''',
+                  '''ref - Britney C''',
                   style: TextStyle(
                       color: AppColors().neonColor,
                       fontSize: 12,

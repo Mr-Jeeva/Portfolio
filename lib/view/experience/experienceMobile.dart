@@ -6,6 +6,7 @@ import 'package:portfolio/resource/appClass.dart';
 import '../../controller/generalController.dart';
 import '../../model/experienceModel.dart';
 import '../../resource/colors.dart';
+import '../../resource/strings.dart';
 
 class ExperienceMobile extends StatefulWidget {
   const ExperienceMobile({Key? key}) : super(key: key);
@@ -19,9 +20,9 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
   Widget build(BuildContext context) {
     List<ExperienceModel> experienceList = [
       ExperienceModel(
-          desig: "Software Engineer",
-          compName: "Netaccess",
-          duration: "Jun 2022 - Present",
+          desig: Strings.expDesig3,
+          compName: Strings.expCompName3,
+          duration: Strings.expDur3,
           points: Column(
             children: [
               Padding(
@@ -39,7 +40,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                     Container(
                       width: AppClass().getMqWidth(context) * 0.5,
                       child: Text(
-                        'sample test about the work statuary and atmosphere, qerjqwjqwiojeqwjeq ',
+                        Strings.expAbout1,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -66,7 +67,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                     Container(
                       width: AppClass().getMqWidth(context) * 0.5,
                       child: Text(
-                        'sample test about the work statuary and atmosphere. asdhasjdhajhdajasbdjbasjkdasjkbldjkabsdjkablsdasdas',
+                        Strings.expAbout1_2,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -93,7 +94,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                     Container(
                       width: AppClass().getMqWidth(context) * 0.5,
                       child: Text(
-                        'sample test about the work statuary and atmosphere, ',
+                        Strings.expAbout1_3,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -108,9 +109,9 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
             ],
           )),
       ExperienceModel(
-          desig: "Mobile App Developer",
-          compName: "Rax-Tech",
-          duration: "Aug 2020 - Jun 2022",
+          desig: Strings.expDesig2,
+          compName: Strings.expCompName2,
+          duration: Strings.expDur2,
           points: Column(
             children: [
               Padding(
@@ -128,7 +129,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                     Container(
                       width: AppClass().getMqWidth(context) * 0.5,
                       child: Text(
-                        'sample test about the work statuary and atmosphere, qerjqwjqwiojeqwjeq ',
+                        Strings.expAbout2,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -155,7 +156,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                     Container(
                       width: AppClass().getMqWidth(context) * 0.5,
                       child: Text(
-                        'sample test about the work statuary and atmosphere. asdhasjdhajhdajasbdjbasjkdasjkbldjkabsdjkablsdasdas',
+                        Strings.expAbout2_2,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -182,7 +183,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                     Container(
                       width: AppClass().getMqWidth(context) * 0.5,
                       child: Text(
-                        'sample test about the work statuary and atmosphere, ',
+                        Strings.expAbout2_3,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -197,9 +198,9 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
             ],
           )),
       ExperienceModel(
-          desig: "Android Developer",
-          compName: "Techno Kryon",
-          duration: "Nov 2019 - Mar 2020",
+          desig: Strings.expDesig1,
+          compName: Strings.expCompName1,
+          duration: Strings.expDur1,
           points: Column(
             children: [
               Padding(
@@ -217,7 +218,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                     Container(
                       width: AppClass().getMqWidth(context) * 0.5,
                       child: Text(
-                        'sample test about the work statuary and atmosphere, qerjqwjqwiojeqwjeq ',
+                        Strings.expAbout3,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -244,7 +245,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                     Container(
                       width: AppClass().getMqWidth(context) * 0.5,
                       child: Text(
-                        'sample test about the work statuary and atmosphere. asdhasjdhajhdajasbdjbasjkdasjkbldjkabsdjkablsdasdas',
+                        Strings.expAbout3_2,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -271,7 +272,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                     Container(
                       width: AppClass().getMqWidth(context) * 0.5,
                       child: Text(
-                        'sample test about the work statuary and atmosphere, ',
+                        Strings.expAbout3_3,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,

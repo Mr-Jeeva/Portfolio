@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/resource/strings.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 import '../../resource/appClass.dart';
@@ -30,7 +31,7 @@ class _IntroTabState extends State<IntroTab> {
               Padding(
                 padding: const EdgeInsets.only(left: 8.0),
                 child: Text(
-                  'Hi, my name is',
+                  Strings.welcomeTxt,
                   style: TextStyle(
                       color: AppColors().neonColor,
                       fontSize: 16,
@@ -40,7 +41,7 @@ class _IntroTabState extends State<IntroTab> {
               Padding(
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Text(
-                  'Jeevanandham.',
+                  Strings.name,
                   style: GoogleFonts.robotoSlab(
                     color: AppColors().textColor,
                     fontWeight: FontWeight.bold,
@@ -55,7 +56,7 @@ class _IntroTabState extends State<IntroTab> {
                 child: Padding(
                   padding: const EdgeInsets.only(top: 5.0),
                   child: Text(
-                    'I build things for the mobile/web.',
+                    Strings.whatIdo,
                     style: GoogleFonts.robotoSlab(
                       color: AppColors().textLight,
                       fontWeight: FontWeight.bold,
@@ -72,7 +73,7 @@ class _IntroTabState extends State<IntroTab> {
                   child: RichText(
                       text: TextSpan(
                           text:
-                              'I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at ',
+                          Strings.introAbout,
                           style: GoogleFonts.roboto(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -81,7 +82,7 @@ class _IntroTabState extends State<IntroTab> {
                           ),
                           children: <TextSpan>[
                         TextSpan(
-                          text: 'NetAccess.',
+                          text: Strings.currentOrgName,
                           style: GoogleFonts.roboto(
                             color: AppColors().neonColor,
                             letterSpacing: 1,
