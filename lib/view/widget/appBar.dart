@@ -34,8 +34,8 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                   padding: const EdgeInsets.only(left: 20.0),
                   child: Image.asset(
                     'assets/svg/appLogo.png',
-                    width: 30,
-                    height: 25,
+                    width: AppClass().getMqWidth(context) * 0.5,
+                    height: AppClass().getMqHeight(context) * 0.5,
                   ),
                 )),
                 Expanded(
@@ -49,61 +49,78 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                           PopupMenuItem(
                             child: Container(
                                 width: 90.0,
-                                child: Row(
-                                  children: [
-                                    Icon(Icons.account_circle_rounded,
-                                        size: 18),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 10.0),
-                                      child: Text(
-                                        'About',
-                                        style: GoogleFonts.roboto(),
+                                child: InkWell(
+                                  onTap: () => widget.controller.scrollToIndex(
+                                      1,
+                                      preferPosition: AutoScrollPosition.begin),
+                                  child: Row(
+                                    children: [
+                                      Icon(Icons.account_circle_rounded,
+                                          size: 18),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 10.0),
+                                        child: Text(
+                                          'About',
+                                          style: GoogleFonts.roboto(),
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 )),
                           ),
                           PopupMenuItem(
-                            child: Row(
-                              children: [
-                                Icon(Icons.travel_explore_rounded, size: 18),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 10.0),
-                                  child: Text(
-                                    'Experience',
-                                    style: GoogleFonts.roboto(),
+                            child: InkWell(
+                              onTap: () => widget.controller.scrollToIndex(2,
+                                  preferPosition: AutoScrollPosition.begin),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.travel_explore_rounded, size: 18),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10.0),
+                                    child: Text(
+                                      'Experience',
+                                      style: GoogleFonts.roboto(),
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                           PopupMenuItem(
-                            child: Row(
-                              children: [
-                                Icon(Icons.computer_rounded, size: 18),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 10.0),
-                                  child: Text(
-                                    'Work',
-                                    style: GoogleFonts.roboto(),
+                            child: InkWell(
+                              onTap: () => widget.controller.scrollToIndex(3,
+                                  preferPosition: AutoScrollPosition.begin),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.computer_rounded, size: 18),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10.0),
+                                    child: Text(
+                                      'Work',
+                                      style: GoogleFonts.roboto(),
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                           PopupMenuItem(
-                            child: Row(
-                              children: [
-                                Icon(Icons.phone_rounded, size: 18),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 10.0),
-                                  child: Text(
-                                    'Contact',
-                                    style: GoogleFonts.roboto(),
+                            child: InkWell(
+                              onTap: () => widget.controller.scrollToIndex(4,
+                                  preferPosition: AutoScrollPosition.begin),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.phone_rounded, size: 18),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10.0),
+                                    child: Text(
+                                      'Contact',
+                                      style: GoogleFonts.roboto(),
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ],

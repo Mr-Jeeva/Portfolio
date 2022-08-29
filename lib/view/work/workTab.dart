@@ -42,7 +42,7 @@ class _WorkWebState extends ConsumerState<WorkTab> {
         Padding(
           padding: const EdgeInsets.only(top: 8.0),
           child: Text(
-            'some of my favorite projects',
+            'view the archives',
             style: TextStyle(
                 color: AppColors().neonColor,
                 fontSize: 12,
