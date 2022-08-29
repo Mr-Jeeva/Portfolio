@@ -9,7 +9,6 @@ import 'package:portfolio/resource/appClass.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../resource/colors.dart';
-import '../../resource/strings.dart';
 
 class WorkWeb extends ConsumerStatefulWidget {
   const WorkWeb({Key? key}) : super(key: key);
@@ -104,7 +103,8 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
             break;
 
           case 1:
-            AppClass().alertDialog(context, 'Not Found', 'Sorry the project you requested not found in the repository');
+            AppClass().alertDialog(context, 'Not Found',
+                'Sorry the project you requested not found in the repository');
             break;
 
           case 2:
@@ -120,7 +120,8 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
             break;
 
           case 5:
-            AppClass().alertDialog(context, 'Not Found', 'Sorry the project you requested not found in the repository');
+            AppClass().alertDialog(context, 'Not Found',
+                'Sorry the project you requested not found in the repository');
             break;
         }
       },

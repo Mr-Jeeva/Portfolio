@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/resource/colors.dart';
-import 'package:portfolio/resource/strings.dart';
 import 'package:portfolio/resource/styles.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -13,15 +11,18 @@ class AppClass {
   static BuildContext? lastContext;
   ScrollController controller = ScrollController();
 
-
   /* URL */
-  static final resumeDownloadURL = '''https://jeeva-portfolio.s3.amazonaws.com/JEEVANANDHAM's+Resume.pdf''';
+  static final resumeDownloadURL =
+      '''https://jeeva-portfolio.s3.amazonaws.com/JEEVANANDHAM's+Resume.pdf''';
 
   static final gitSafeC19 = '''https://github.com/jeeva-HBK/SafeC19''';
+
   // static final gitHermarts = '''https://github.com/jeeva-HBK/SafeC19''';
   static final gitWtIot = '''https://github.com/jeeva-HBK/AutoChem''';
-  static final gitAutoStabilizer = '''https://github.com/jeeva-HBK/AutoStabilizer''';
+  static final gitAutoStabilizer =
+      '''https://github.com/jeeva-HBK/AutoStabilizer''';
   static final gitPAT = '''https://github.com/jeeva-HBK/PAT''';
+
   // static final gitAVM = '''https://github.com/jeeva-HBK/SafeC19''';
 
   List<WorkModel> projectList = [
@@ -101,13 +102,13 @@ class AppClass {
     showDialog(
         context: context,
         builder: (_) => AlertDialog(
-            title: Text(title, style: TxtStyle().boldWhite(context)),
-            content: Text(msg),
-            actions: [
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(primary: Colors.green),
-                  onPressed: () => Navigator.pop(context),
-                  child: Text('Okay'))
-            ]));
+                title: Text(title, style: TxtStyle().boldWhite(context)),
+                content: Text(msg),
+                actions: [
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(primary: Colors.green),
+                      onPressed: () => Navigator.pop(context),
+                      child: Text('Okay'))
+                ]));
   }
 }

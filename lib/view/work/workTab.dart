@@ -92,7 +92,8 @@ class _WorkWebState extends ConsumerState<WorkTab> {
             break;
 
           case 1:
-            AppClass().alertDialog(context, 'Not Found', 'Sorry the project you requested not found in the repository');
+            AppClass().alertDialog(context, 'Not Found',
+                'Sorry the project you requested not found in the repository');
             break;
 
           case 2:
@@ -108,15 +109,20 @@ class _WorkWebState extends ConsumerState<WorkTab> {
             break;
 
           case 5:
-            AppClass().alertDialog(context, 'Not Found', 'Sorry the project you requested not found in the repository');
+            AppClass().alertDialog(context, 'Not Found',
+                'Sorry the project you requested not found in the repository');
             break;
         }
       },
       onHover: (bool) {
         if (bool) {
-          ref.read(hoverProvider.notifier).state = "$index";
+          ref
+              .read(hoverProvider.notifier)
+              .state = "$index";
         } else {
-          ref.read(hoverProvider.notifier).state = "";
+          ref
+              .read(hoverProvider.notifier)
+              .state = "";
         }
       },
       child: Consumer(builder: (context, ref, child) {

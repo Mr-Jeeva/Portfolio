@@ -29,9 +29,14 @@ class _ActionBarState extends ConsumerState<ActionBar> {
           if (scrType == ScreenType.mobile || scrType == ScreenType.tab) {
             return Row(
               children: [
-                Expanded(child: Padding(
+                Expanded(
+                    child: Padding(
                   padding: const EdgeInsets.only(left: 20.0),
-                  child: Image.asset('assets/svg/appLogo.png', width: 30, height: 25,),
+                  child: Image.asset(
+                    'assets/svg/appLogo.png',
+                    width: 30,
+                    height: 25,
+                  ),
                 )),
                 Expanded(
                   flex: 9,
@@ -46,9 +51,11 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                                 width: 90.0,
                                 child: Row(
                                   children: [
-                                    Icon(Icons.account_circle_rounded, size: 18),
+                                    Icon(Icons.account_circle_rounded,
+                                        size: 18),
                                     Padding(
-                                      padding: const EdgeInsets.only(left: 10.0),
+                                      padding:
+                                          const EdgeInsets.only(left: 10.0),
                                       child: Text(
                                         'About',
                                         style: GoogleFonts.roboto(),

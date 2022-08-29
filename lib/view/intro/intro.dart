@@ -8,6 +8,7 @@ import 'introTab.dart';
 
 class IntroContent extends StatefulWidget {
   AutoScrollController aScrollController;
+
   IntroContent(this.aScrollController, {Key? key}) : super(key: key);
 
   @override

@@ -8,6 +8,7 @@ import '../../resource/colors.dart';
 
 class IntroTab extends StatefulWidget {
   AutoScrollController aScrollController;
+
   IntroTab(this.aScrollController, {Key? key}) : super(key: key);
 
   @override
@@ -72,8 +73,7 @@ class _IntroTabState extends State<IntroTab> {
                   width: AppClass().getMqWidth(context) * 0.45,
                   child: RichText(
                       text: TextSpan(
-                          text:
-                          Strings.introAbout,
+                          text: Strings.introAbout,
                           style: GoogleFonts.roboto(
                             color: AppColors().textLight,
                             letterSpacing: 1,

@@ -8,6 +8,7 @@ import '../../resource/strings.dart';
 
 class IntroMobile extends StatefulWidget {
   final AutoScrollController aScrollController;
+
   IntroMobile(this.aScrollController, {Key? key}) : super(key: key);
 
   @override
@@ -71,8 +72,7 @@ class _IntroMobileState extends State<IntroMobile> {
                   width: AppClass().getMqWidth(context) * 0.6,
                   child: RichText(
                       text: TextSpan(
-                          text:
-                              Strings.introAbout,
+                          text: Strings.introAbout,
                           style: GoogleFonts.roboto(
                             color: AppColors().textLight,
                             letterSpacing: 1,

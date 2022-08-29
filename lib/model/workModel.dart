@@ -7,8 +7,8 @@ class WorkModel {
 
   WorkModel(
       {this.projectTitle,
-        this.projectContent,
-        this.tech1,
-        this.tech2,
-        this.tech3});
+      this.projectContent,
+      this.tech1,
+      this.tech2,
+      this.tech3});
 }
