@@ -10,7 +10,7 @@ class Strings {
 
   /* About screen contents */
   static final aboutPara1 =
-      '''Hello! My name is Jeeva and I enjoy creating things that live on the internet. My interest in mobile/web development started back in 2019 when I decided to clone some applications — turns my passion into profession.''';
+      '''Hello! Myself Jeeva and I enjoy creating things that live on the internet. My interest in mobile/web development started back in 2019 when I decided to clone some applications — turns my passion into profession.''';
   static final aboutPara2 =
       '''Fast-forward to today, and I’ve had the privilege of working for a good organization, a product-based, a huge corporation, and a student-led working atmosphere. My main focus these days is building accessible, inclusive products and digital experiences at Netaccess for a variety of clients.''';
   static final aboutPara3 =
@@ -28,33 +28,34 @@ class Strings {
   static final expDesig1 = '''Android Developer''';
   static final expDur1 = '''Nov 2019 - Mar 2020''';
   static final expAbout1 =
-      '''sample test about the work statuary and atmosphere, qerjqwjqwiojeqwjeq ''';
+  '''Joined as a Intern to gain knowledge and experience about software Industry, Mobile Application Development.''';
   static final expAbout1_2 =
-      '''sample test about the work statuary and atmosphere. asdhasjdhajhdajasbdjbasjkdasjkbldjkabsdjkablsdasdas''';
+  '''Learn and explored native android architecture patterns, network calls and basic functions''';
   static final expAbout1_3 =
-      '''sample test about the work statuary and atmosphere, ''';
+  '''Worked on few Live Project such as E-Commerce, ERP, CMS Applications''';
 
-  static final expCompName2 = '''Rax-Tech''';
+  static final expCompName2 = '''Rax-Tech International''';
   static final expDesig2 = '''Mobile App Developer''';
   static final expDur2 = '''Aug 2020 - Jun 2022''';
   static final expAbout2 =
-      '''sample test about the work statuary and atmosphere, qerjqwjqwiojeqwjeq ''';
+      '''Worked as a Senior Mobile Application Developer and maintained a team of Freshers and Interns to deliver practical solution''';
   static final expAbout2_2 =
-      '''sample test about the work statuary and atmosphere. asdhasjdhajhdajasbdjbasjkdasjkbldjkabsdjkablsdasdas''';
+      '''Engineered and maintained major features of IoT (Internet Of Things), Erp, CMS and Innovative applications''';
   static final expAbout2_3 =
-      '''sample test about the work statuary and atmosphere, ''';
+      '''Experienced many technologies such as WiFi(TCP/UDP), BLE, MQTT, LIVE DATA, Google ML - Tensor Flow and etc''';
 
-  static final expCompName3 = '''Netaccess''';
+  static final expCompName3 = '''NetAccess India LTD''';
   static final expDesig3 = '''Software Engineer''';
   static final expDur3 = '''Jun 2022 - Present''';
   static final expAbout3 =
-      '''sample test about the work statuary and atmosphere, qerjqwjqwiojeqwjeq ''';
+  '''Working with a team of Five Engineer to build Field Force Automation Applications, B2B Applications, etc ''';
   static final expAbout3_2 =
-      '''sample test about the work statuary and atmosphere, qerjqwjqwiojeqwjeq ''';
+  '''Interfaced with clients on a weekly basis, providing technological expertise''';
   static final expAbout3_3 =
-      '''sample test about the work statuary and atmosphere, qerjqwjqwiojeqwjeq ''';
+  '''''';
 
   /* Contact screen content */
   static final endTxt =
       '''Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!''';
+
 }
