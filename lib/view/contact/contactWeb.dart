@@ -5,6 +5,7 @@ import 'package:portfolio/resource/appClass.dart';
 
 import '../../resource/colors.dart';
 import '../../resource/strings.dart';
+import 'contact.dart';
 
 class ContactWeb extends StatefulWidget {
   const ContactWeb({Key? key}) : super(key: key);
@@ -74,7 +75,9 @@ class _ContactWebState extends State<ContactWeb> {
               Padding(
                 padding: EdgeInsets.only(top: 50, bottom: 70),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    showMessageDialog(context);
+                  },
                   child: Container(
                     height: AppClass().getMqHeight(context) * 0.09,
                     width: AppClass().getMqWidth(context) * 0.15,

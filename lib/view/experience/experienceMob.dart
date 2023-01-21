@@ -26,7 +26,7 @@ class _ExperienceMobState extends State<ExperienceMob> {
           points: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(right: 5.0, top: 10.0),
+                padding: const EdgeInsets.only(right: 5.0, top: 10.0,),
                 child: Row(
                   children: [
                     Padding(
@@ -38,14 +38,17 @@ class _ExperienceMobState extends State<ExperienceMob> {
                       ),
                     ),
                     Expanded(
-                      child: Text(
-                        Strings.expAbout1,
-                        style: TextStyle(
-                            color: AppColors().textLight,
-                            letterSpacing: 1,
-                            height: 1.5,
-                            fontSize: 13,
-                            fontFamily: 'sfmono'),
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 15.0),
+                        child: Text(
+                          Strings.expAbout1,
+                          style: TextStyle(
+                              color: AppColors().textLight,
+                              letterSpacing: 1,
+                              height: 1.5,
+                              fontSize: 13,
+                              fontFamily: 'sfmono'),
+                        ),
                       ),
                     )
                   ],
@@ -64,14 +67,17 @@ class _ExperienceMobState extends State<ExperienceMob> {
                       ),
                     ),
                     Expanded(
-                      child: Text(
-                        Strings.expAbout1_2,
-                        style: TextStyle(
-                            color: AppColors().textLight,
-                            letterSpacing: 1,
-                            height: 1.5,
-                            fontSize: 13,
-                            fontFamily: 'sfmono'),
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 15.0),
+                        child: Text(
+                          Strings.expAbout1_2,
+                          style: TextStyle(
+                              color: AppColors().textLight,
+                              letterSpacing: 1,
+                              height: 1.5,
+                              fontSize: 13,
+                              fontFamily: 'sfmono'),
+                        ),
                       ),
                     ),
                   ],
@@ -90,14 +96,17 @@ class _ExperienceMobState extends State<ExperienceMob> {
                       ),
                     ),
                     Expanded(
-                      child: Text(
-                        Strings.expAbout1_3,
-                        style: TextStyle(
-                            color: AppColors().textLight,
-                            letterSpacing: 1,
-                            height: 1.5,
-                            fontSize: 13,
-                            fontFamily: 'sfmono'),
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 15.0),
+                        child: Text(
+                          Strings.expAbout1_3,
+                          style: TextStyle(
+                              color: AppColors().textLight,
+                              letterSpacing: 1,
+                              height: 1.5,
+                              fontSize: 13,
+                              fontFamily: 'sfmono'),
+                        ),
                       ),
                     ),
                   ],
@@ -124,14 +133,17 @@ class _ExperienceMobState extends State<ExperienceMob> {
                       ),
                     ),
                     Expanded(
-                      child: Text(
-                        Strings.expAbout2,
-                        style: TextStyle(
-                            color: AppColors().textLight,
-                            letterSpacing: 1,
-                            height: 1.5,
-                            fontSize: 13,
-                            fontFamily: 'sfmono'),
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 15.0),
+                        child: Text(
+                          Strings.expAbout2,
+                          style: TextStyle(
+                              color: AppColors().textLight,
+                              letterSpacing: 1,
+                              height: 1.5,
+                              fontSize: 13,
+                              fontFamily: 'sfmono'),
+                        ),
                       ),
                     ),
                   ],
@@ -150,14 +162,17 @@ class _ExperienceMobState extends State<ExperienceMob> {
                       ),
                     ),
                     Expanded(
-                      child: Text(
-                        Strings.expAbout2_2,
-                        style: TextStyle(
-                            color: AppColors().textLight,
-                            letterSpacing: 1,
-                            height: 1.5,
-                            fontSize: 13,
-                            fontFamily: 'sfmono'),
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 15.0),
+                        child: Text(
+                          Strings.expAbout2_2,
+                          style: TextStyle(
+                              color: AppColors().textLight,
+                              letterSpacing: 1,
+                              height: 1.5,
+                              fontSize: 13,
+                              fontFamily: 'sfmono'),
+                        ),
                       ),
                     ),
                   ],
@@ -176,14 +191,17 @@ class _ExperienceMobState extends State<ExperienceMob> {
                       ),
                     ),
                     Expanded(
-                      child: Text(
-                        Strings.expAbout2_3,
-                        style: TextStyle(
-                            color: AppColors().textLight,
-                            letterSpacing: 1,
-                            height: 1.5,
-                            fontSize: 13,
-                            fontFamily: 'sfmono'),
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 15.0),
+                        child: Text(
+                          Strings.expAbout2_3,
+                          style: TextStyle(
+                              color: AppColors().textLight,
+                              letterSpacing: 1,
+                              height: 1.5,
+                              fontSize: 13,
+                              fontFamily: 'sfmono'),
+                        ),
                       ),
                     ),
                   ],
@@ -210,14 +228,17 @@ class _ExperienceMobState extends State<ExperienceMob> {
                       ),
                     ),
                     Expanded(
-                      child: Text(
-                        Strings.expAbout3,
-                        style: TextStyle(
-                            color: AppColors().textLight,
-                            letterSpacing: 1,
-                            height: 1.5,
-                            fontSize: 13,
-                            fontFamily: 'sfmono'),
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 15.0),
+                        child: Text(
+                          Strings.expAbout3,
+                          style: TextStyle(
+                              color: AppColors().textLight,
+                              letterSpacing: 1,
+                              height: 1.5,
+                              fontSize: 13,
+                              fontFamily: 'sfmono'),
+                        ),
                       ),
                     ),
                   ],
@@ -236,14 +257,17 @@ class _ExperienceMobState extends State<ExperienceMob> {
                       ),
                     ),
                     Expanded(
-                      child: Text(
-                        Strings.expAbout3_2,
-                        style: TextStyle(
-                            color: AppColors().textLight,
-                            letterSpacing: 1,
-                            height: 1.5,
-                            fontSize: 13,
-                            fontFamily: 'sfmono'),
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 15.0),
+                        child: Text(
+                          Strings.expAbout3_2,
+                          style: TextStyle(
+                              color: AppColors().textLight,
+                              letterSpacing: 1,
+                              height: 1.5,
+                              fontSize: 13,
+                              fontFamily: 'sfmono'),
+                        ),
                       ),
                     ),
                   ],
@@ -262,14 +286,17 @@ class _ExperienceMobState extends State<ExperienceMob> {
                       ),
                     ),
                     Expanded(
-                      child: Text(
-                        Strings.expAbout3_3,
-                        style: TextStyle(
-                            color: AppColors().textLight,
-                            letterSpacing: 1,
-                            height: 1.5,
-                            fontSize: 13,
-                            fontFamily: 'sfmono'),
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 15.0),
+                        child: Text(
+                          Strings.expAbout3_3,
+                          style: TextStyle(
+                              color: AppColors().textLight,
+                              letterSpacing: 1,
+                              height: 1.5,
+                              fontSize: 13,
+                              fontFamily: 'sfmono'),
+                        ),
                       ),
                     ),
                   ],
