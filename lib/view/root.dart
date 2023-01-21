@@ -25,7 +25,7 @@ class RootScreen extends ConsumerStatefulWidget {
 }
 
 class _RootScreenState extends ConsumerState<RootScreen> {
-  final aScrollController = AutoScrollController();
+  final mScrollController = AutoScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                   return AnimatedOpacity(
                     opacity: isScrollingUp ? 1.0 : 0.0,
                     duration: const Duration(milliseconds: 500),
-                    child: ActionBar(aScrollController),
+                    child: ActionBar(mScrollController),
                   );
                 }),
                 Expanded(
@@ -71,31 +71,31 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                         Expanded(
                             flex: 8,
                             child: ListView(
-                              controller: aScrollController,
+                              controller: mScrollController,
                               children: [
                                 AutoScrollTag(
                                     key: ValueKey(0),
-                                    controller: aScrollController,
+                                    controller: mScrollController,
                                     index: 0,
-                                    child: IntroContent(aScrollController)),
+                                    child: IntroContent(mScrollController)),
                                 AutoScrollTag(
                                     key: ValueKey(1),
-                                    controller: aScrollController,
+                                    controller: mScrollController,
                                     index: 1,
                                     child: About()),
                                 AutoScrollTag(
                                     key: ValueKey(2),
-                                    controller: aScrollController,
+                                    controller: mScrollController,
                                     index: 2,
                                     child: Experience()),
                                 AutoScrollTag(
                                     key: ValueKey(3),
-                                    controller: aScrollController,
+                                    controller: mScrollController,
                                     index: 3,
                                     child: Work()),
                                 AutoScrollTag(
                                     key: ValueKey(4),
-                                    controller: aScrollController,
+                                    controller: mScrollController,
                                     index: 4,
                                     child: Contact())
                               ],

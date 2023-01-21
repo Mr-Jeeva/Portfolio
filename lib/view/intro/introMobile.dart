@@ -21,6 +21,7 @@ class _IntroMobileState extends State<IntroMobile> {
     return Container(
       color: Colors.transparent,
       height: AppClass().getMqHeight(context) - 50,
+      padding: EdgeInsets.only(left: 20.0, right: 20.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -28,15 +29,12 @@ class _IntroMobileState extends State<IntroMobile> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Text(
-                  Strings.welcomeTxt,
-                  style: TextStyle(
-                      color: AppColors().neonColor,
-                      fontSize: 16,
-                      fontFamily: 'sfmono'),
-                ),
+              Text(
+                Strings.welcomeTxt,
+                style: TextStyle(
+                    color: AppColors().neonColor,
+                    fontSize: 17,
+                    fontFamily: 'sfmono'),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 10.0),
@@ -46,13 +44,11 @@ class _IntroMobileState extends State<IntroMobile> {
                     color: AppColors().textColor,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 3,
-                    fontSize: 30,
+                    fontSize: 25,
                   ),
                 ),
               ),
               Container(
-                width: AppClass().getMqWidth(context) -
-                    (AppClass().getMqWidth(context) * 0.23),
                 child: Padding(
                   padding: const EdgeInsets.only(top: 5.0),
                   child: Text(
@@ -61,7 +57,7 @@ class _IntroMobileState extends State<IntroMobile> {
                       color: AppColors().textLight,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 3,
-                      fontSize: 30,
+                      fontSize: 24,
                     ),
                   ),
                 ),
@@ -69,7 +65,6 @@ class _IntroMobileState extends State<IntroMobile> {
               Padding(
                 padding: const EdgeInsets.only(top: 20.0),
                 child: Container(
-                  width: AppClass().getMqWidth(context) * 0.6,
                   child: RichText(
                       text: TextSpan(
                           text: Strings.introAbout,
@@ -77,7 +72,7 @@ class _IntroMobileState extends State<IntroMobile> {
                             color: AppColors().textLight,
                             letterSpacing: 1,
                             height: 1.5,
-                            fontSize: 15,
+                            fontSize: 17,
                           ),
                           children: <TextSpan>[
                         TextSpan(
@@ -86,7 +81,7 @@ class _IntroMobileState extends State<IntroMobile> {
                             color: AppColors().neonColor,
                             letterSpacing: 1,
                             height: 1.5,
-                            fontSize: 15,
+                            fontSize: 17,
                           ),
                         )
                       ])),
@@ -100,8 +95,9 @@ class _IntroMobileState extends State<IntroMobile> {
                         preferPosition: AutoScrollPosition.begin);
                   },
                   child: Container(
-                    height: AppClass().getMqHeight(context) * 0.09,
-                    width: AppClass().getMqWidth(context) * 0.45,
+                    height: AppClass().getMqHeight(context) * 0.07,
+                    width: AppClass().getMqWidth(context) * 0.5,
+                    padding: EdgeInsets.all(10.0),
                     decoration: BoxDecoration(
                         color: Colors.transparent,
                         borderRadius: BorderRadius.all(Radius.circular(3.0)),

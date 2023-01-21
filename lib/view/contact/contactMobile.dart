@@ -18,83 +18,91 @@ class _ContactMobileState extends State<ContactMobile> {
   Widget build(BuildContext context) {
     return Container(
       height: AppClass().getMqHeight(context) - 70,
+      padding: EdgeInsets.only(top: 50),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    '''04.''',
-                    style: TextStyle(
-                        color: AppColors().neonColor,
-                        fontSize: 12,
-                        fontFamily: 'sfmono'),
-                  ),
-                  Text(
-                    ''' What's next?''',
-                    style: TextStyle(
-                        color: AppColors().neonColor,
-                        fontSize: 14,
-                        fontFamily: 'sfmono'),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 8.0),
-                child: Text(
-                  'Get In Touch',
-                  style: GoogleFonts.robotoSlab(
-                    color: AppColors().textColor,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 3,
-                    fontSize: 40,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 15.0),
-                child: Container(
-                  width: AppClass().getMqWidth(context) * 0.55,
-                  child: Text(
-                    Strings.endTxt,
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.roboto(
-                      color: AppColors().textLight,
-                      letterSpacing: 1,
-                      height: 1.5,
-                      fontSize: 14,
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 50, bottom: 70),
-                child: InkWell(
-                  onTap: () {},
-                  child: Container(
-                    height: AppClass().getMqHeight(context) * 0.08,
-                    width: AppClass().getMqWidth(context) * 0.2,
-                    decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius: BorderRadius.all(Radius.circular(3.0)),
-                        border: Border.all(
-                            color: AppColors().neonColor, width: 1.5)),
-                    child: Center(
-                      child: Text('Say Hello!',
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          '''04.''',
                           style: TextStyle(
                               color: AppColors().neonColor,
-                              fontSize: 10,
-                              letterSpacing: 1,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'sfmono')),
+                              fontSize: 12,
+                              fontFamily: 'sfmono'),
+                        ),
+                        Text(
+                          ''' What's next?''',
+                          style: TextStyle(
+                              color: AppColors().neonColor,
+                              fontSize: 14,
+                              fontFamily: 'sfmono'),
+                        ),
+                      ],
                     ),
-                  ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: Text(
+                        'Get In Touch',
+                        style: GoogleFonts.robotoSlab(
+                          color: AppColors().textColor,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 3,
+                          fontSize: 40,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15.0),
+                      child: Container(
+                        width: AppClass().getMqWidth(context) * 0.8,
+                        child: Text(
+                          Strings.endTxt,
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.roboto(
+                            color: AppColors().textLight,
+                            letterSpacing: 1,
+                            height: 1.5,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 50, bottom: 70),
+                      child: InkWell(
+                        onTap: () {},
+                        child: Container(
+                          height: AppClass().getMqHeight(context) * 0.07,
+                          width: AppClass().getMqWidth(context) * 0.3,
+                          decoration: BoxDecoration(
+                              color: Colors.transparent,
+                              borderRadius: BorderRadius.all(Radius.circular(3.0)),
+                              border: Border.all(
+                                  color: AppColors().neonColor, width: 1.5)),
+                          child: Center(
+                            child: Text('Say Hello!',
+                                style: TextStyle(
+                                    color: AppColors().neonColor,
+                                    fontSize: 10,
+                                    letterSpacing: 1,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'sfmono')),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
                 ),
-              )
-            ],
+              ],
+            ),
           ),
           Column(
             children: [

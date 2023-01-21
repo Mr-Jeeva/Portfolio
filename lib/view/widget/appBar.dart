@@ -23,7 +23,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
   Widget build(BuildContext context) {
     return Container(
         height: 70,
-        padding: EdgeInsets.only(right: 55.0, top: 33.0),
+        padding: EdgeInsets.only(right: 15.0, top: 20.0),
         child: () {
           ScreenType scrType = AppClass().getScreenType(context);
           if (scrType == ScreenType.mobile || scrType == ScreenType.tab) {

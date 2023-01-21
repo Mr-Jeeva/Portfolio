@@ -8,14 +8,14 @@ import '../../model/experienceModel.dart';
 import '../../resource/colors.dart';
 import '../../resource/strings.dart';
 
-class ExperienceMobile extends StatefulWidget {
-  const ExperienceMobile({Key? key}) : super(key: key);
+class ExperienceMob extends StatefulWidget {
+  const ExperienceMob({Key? key}) : super(key: key);
 
   @override
-  State<ExperienceMobile> createState() => _ExperienceMobileState();
+  State<ExperienceMob> createState() => _ExperienceMobState();
 }
 
-class _ExperienceMobileState extends State<ExperienceMobile> {
+class _ExperienceMobState extends State<ExperienceMob> {
   @override
   Widget build(BuildContext context) {
     List<ExperienceModel> experienceList = [
@@ -26,7 +26,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
           points: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(right: 5.0, top: 10.0),
                 child: Row(
                   children: [
                     Padding(
@@ -37,8 +37,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                         size: 20,
                       ),
                     ),
-                    Container(
-                      width: AppClass().getMqWidth(context) * 0.5,
+                    Expanded(
                       child: Text(
                         Strings.expAbout1,
                         style: TextStyle(
@@ -48,12 +47,12 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                             fontSize: 13,
                             fontFamily: 'sfmono'),
                       ),
-                    ),
+                    )
                   ],
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(right: 5.0, top: 10.0),
                 child: Row(
                   children: [
                     Padding(
@@ -64,8 +63,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                         size: 20,
                       ),
                     ),
-                    Container(
-                      width: AppClass().getMqWidth(context) * 0.5,
+                    Expanded(
                       child: Text(
                         Strings.expAbout1_2,
                         style: TextStyle(
@@ -80,7 +78,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(right: 5.0, top: 10.0),
                 child: Row(
                   children: [
                     Padding(
@@ -91,8 +89,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                         size: 20,
                       ),
                     ),
-                    Container(
-                      width: AppClass().getMqWidth(context) * 0.5,
+                    Expanded(
                       child: Text(
                         Strings.expAbout1_3,
                         style: TextStyle(
@@ -115,7 +112,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
           points: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(right: 5.0, top: 10.0),
                 child: Row(
                   children: [
                     Padding(
@@ -126,8 +123,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                         size: 20,
                       ),
                     ),
-                    Container(
-                      width: AppClass().getMqWidth(context) * 0.5,
+                    Expanded(
                       child: Text(
                         Strings.expAbout2,
                         style: TextStyle(
@@ -142,7 +138,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(right: 5.0, top: 10.0),
                 child: Row(
                   children: [
                     Padding(
@@ -153,8 +149,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                         size: 20,
                       ),
                     ),
-                    Container(
-                      width: AppClass().getMqWidth(context) * 0.5,
+                    Expanded(
                       child: Text(
                         Strings.expAbout2_2,
                         style: TextStyle(
@@ -169,7 +164,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(right: 5.0, top: 10.0),
                 child: Row(
                   children: [
                     Padding(
@@ -180,8 +175,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                         size: 20,
                       ),
                     ),
-                    Container(
-                      width: AppClass().getMqWidth(context) * 0.5,
+                    Expanded(
                       child: Text(
                         Strings.expAbout2_3,
                         style: TextStyle(
@@ -204,7 +198,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
           points: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(right: 5.0, top: 10.0),
                 child: Row(
                   children: [
                     Padding(
@@ -215,8 +209,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                         size: 20,
                       ),
                     ),
-                    Container(
-                      width: AppClass().getMqWidth(context) * 0.5,
+                    Expanded(
                       child: Text(
                         Strings.expAbout3,
                         style: TextStyle(
@@ -231,7 +224,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(right: 5.0, top: 10.0),
                 child: Row(
                   children: [
                     Padding(
@@ -242,8 +235,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                         size: 20,
                       ),
                     ),
-                    Container(
-                      width: AppClass().getMqWidth(context) * 0.5,
+                    Expanded(
                       child: Text(
                         Strings.expAbout3_2,
                         style: TextStyle(
@@ -258,7 +250,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(right: 5.0, top: 10.0),
                 child: Row(
                   children: [
                     Padding(
@@ -269,8 +261,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                         size: 20,
                       ),
                     ),
-                    Container(
-                      width: AppClass().getMqWidth(context) * 0.5,
+                    Expanded(
                       child: Text(
                         Strings.expAbout3_3,
                         style: TextStyle(
@@ -290,6 +281,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
 
     return Container(
       height: AppClass().getMqHeight(context) - 100,
+      margin: EdgeInsets.only(left: 20.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -318,7 +310,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
               Container(
                 height: 0.5,
                 margin: EdgeInsets.only(left: 15),
-                width: AppClass().getMqWidth(context) * 0.2,
+                width: AppClass().getMqWidth(context) * 0.1,
                 color: AppColors().textLight,
               )
             ],
@@ -327,7 +319,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
             var data = ref.watch(selectedExpProvider);
             return Container(
               width: AppClass().getMqWidth(context),
-              margin: EdgeInsets.all(30.0),
+              margin: EdgeInsets.only(top: 20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -359,7 +351,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                                       ? AppColors().neonColor
                                       : AppColors().textLight,
                                   height: 1.5,
-                                  fontSize: 11,
+                                  fontSize: 9,
                                   fontFamily: 'sfmono'),
                             ),
                           ),
@@ -387,7 +379,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                                       ? AppColors().neonColor
                                       : AppColors().textLight,
                                   height: 1.5,
-                                  fontSize: 11,
+                                  fontSize: 9,
                                   fontFamily: 'sfmono'),
                             ),
                           ),
@@ -415,7 +407,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                                       ? AppColors().neonColor
                                       : AppColors().textLight,
                                   height: 1.5,
-                                  fontSize: 11,
+                                  fontSize: 9,
                                   fontFamily: 'sfmono'),
                             ),
                           ),

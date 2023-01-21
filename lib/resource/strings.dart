@@ -28,31 +28,31 @@ class Strings {
   static final expDesig1 = '''Android Developer''';
   static final expDur1 = '''Nov 2019 - Mar 2020''';
   static final expAbout1 =
-  '''Joined as a Intern to gain knowledge and experience about software Industry, Mobile Application Development.''';
+  '''To kick start my carrier in IT, joined as an Intern to gain knowledge and experience in software industry, Mobile Application Development.''';
   static final expAbout1_2 =
-  '''Learn and explored native android architecture patterns, network calls and basic functions''';
+  '''Learned and explored native Android architecture models, network calls and core functionality.''';
   static final expAbout1_3 =
-  '''Worked on few Live Project such as E-Commerce, ERP, CMS Applications''';
+  '''Has worked on several live projects on different platforms such as e-commerce, ERP, CMS Applications.''';
 
   static final expCompName2 = '''Rax-Tech International''';
   static final expDesig2 = '''Mobile App Developer''';
   static final expDur2 = '''Aug 2020 - Jun 2022''';
   static final expAbout2 =
-      '''Worked as a Senior Mobile Application Developer and maintained a team of Freshers and Interns to deliver practical solution''';
+      '''Worked as a senior mobile app developer and maintained a team of Freshers and interns to provide a hands-on solution.''';
   static final expAbout2_2 =
-      '''Engineered and maintained major features of IoT (Internet Of Things), Erp, CMS and Innovative applications''';
+      '''Design and maintenance of the key functions of IoT (Internet of Things), Erp, CMS and innovative applications.''';
   static final expAbout2_3 =
-      '''Experienced many technologies such as WiFi(TCP/UDP), BLE, MQTT, LIVE DATA, Google ML - Tensor Flow and etc''';
+      '''Experienced many technologies such as wifi (TCP/UDP), BLE, MQTT, LIVE DATA, Google ML - Tensor Flow, GraphQL and so on.''';
 
-  static final expCompName3 = '''NetAccess India LTD''';
+  static final expCompName3 = '''NetAccess India Ltd''';
   static final expDesig3 = '''Software Engineer''';
   static final expDur3 = '''Jun 2022 - Present''';
   static final expAbout3 =
-  '''Working with a team of Five Engineer to build Field Force Automation Applications, B2B Applications, etc ''';
+  '''An entity of India's leading business conglomerate Murugappa Group of companies.''';
   static final expAbout3_2 =
-  '''Interfaced with clients on a weekly basis, providing technological expertise''';
+  '''Worked with a team of 5 engineers to create field force automation applications, business-to-business applications, etc.''';
   static final expAbout3_3 =
-  '''''';
+  '''Interfacing with customers on a weekly basis, delivering technology expertise.''';
 
   /* Contact screen content */
   static final endTxt =

@@ -198,7 +198,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
-                        AppClass().projectList[index].tech1.toString(),
+                        AppClass().projectList[index].tech1 ?? "",
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
@@ -206,7 +206,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                         ),
                       ),
                       Text(
-                        AppClass().projectList[index].tech2.toString(),
+                        AppClass().projectList[index].tech2 ?? "",
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
@@ -214,7 +214,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                         ),
                       ),
                       Text(
-                        AppClass().projectList[index].tech3.toString(),
+                        AppClass().projectList[index].tech3 ?? "",
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,

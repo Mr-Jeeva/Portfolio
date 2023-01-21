@@ -29,13 +29,13 @@ class AppClass {
     WorkModel(
         projectTitle: "SafeC19",
         projectContent:
-            "It’s an Automatic Contactless Face Mask detection/Temperature detection/Hand Sanitizer app",
+            "A fully automatic temperature and face mask detection solution for a completely contactless hand sanitizer. A solution so unique that it has integrated door access control if monitoring parameters are normal. An image is still captured and uploaded in cloud server on its own, as reference for auditing.",
         tech1: "Android",
-        tech2: "Google ML",
+        tech2: "Google-ML",
         tech3: "Java"),
     WorkModel(
         projectTitle: "Hermarts",
-        projectContent: "E-Commerce Application for homemade Indian products",
+        projectContent: "Hermarts is an Ecommerce website/mobile application specially designed to encourage and takeout the hidden talent of women candidates, who never gets opportunities to explore their talents. It is developed with user-centric features to help the users with integrated InApp payment mode with high level security.",
         tech1: "Android",
         tech2: "RazorPay"),
     WorkModel(
@@ -48,15 +48,16 @@ class AppClass {
     WorkModel(
         projectTitle: "AutoStabilizer",
         projectContent:
-            '''Client - SenseElec Remote controller mobile app for stabilizers and can be accessed locally(WiFi) and globally(MQTT).''',
+            '''It is used to connect to a stabilizer and read the inlet and outlet voltage and several other parameters of the Stabilizer. This application will also set up the stabilizer hardware to connect the stabilizer to the Wi-Fi network. And with some features like PIR Sensor, Control Stabilizer with schedule, Standby Mode, Control Stabilizer with MobileData via AWS, and With WiFi via TCP Connection.''',
         tech1: "Android",
         tech2: "MQTT"),
     WorkModel(
         projectTitle: "PAT",
         projectContent:
-            '''PCB testing tool that helps QC/QA employees of rax-tech international, records the production flow and work strategy of every employee and automatically generates and stores some of the records as reports in the cloud.''',
+            '''This application is to store and record the data of tested production product information for future reference. This application can reduce the time and ensure the performance and quality of the QA/QC people. This application let the super admin to track the workers and their performance. Through this application, we can calculate the time spent on every test that was taken to complete by the worker.''',
         tech1: "Flutter",
-        tech2: "NodeJs"),
+        tech2: "NodeJs",
+        tech3: "Flutter-Windows"),
     WorkModel(
         projectTitle: "AVM",
         projectContent:
