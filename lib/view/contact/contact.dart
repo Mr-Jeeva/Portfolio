@@ -5,7 +5,6 @@ import 'package:portfolio/responsive.dart';
 import 'package:portfolio/view/contact/contactMobile.dart';
 import 'package:portfolio/view/contact/contactTab.dart';
 import 'package:portfolio/view/contact/contactWeb.dart';
-import 'package:simple_email_sender/simple_email_sender.dart';
 
 import '../../resource/colors.dart';
 
