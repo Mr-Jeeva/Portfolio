@@ -99,29 +99,27 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
       onTap: () async {
         switch (index) {
           case 0:
-            await launchUrl(Uri.parse(AppClass.gitSafeC19));
+            //await launchUrl(Uri.parse(AppClass.gitSafeC19));
             break;
 
           case 1:
-            AppClass().alertDialog(context, 'Not Found',
-                'Sorry the project you requested not found in the repository');
+            //AppClass().alertDialog(context, 'Not Found', 'Sorry the project you requested not found in the repository');
             break;
 
           case 2:
-            await launchUrl(Uri.parse(AppClass.gitWtIot));
+            //await launchUrl(Uri.parse(AppClass.gitWtIot));
             break;
 
           case 3:
-            await launchUrl(Uri.parse(AppClass.gitAutoStabilizer));
+            //await launchUrl(Uri.parse(AppClass.gitAutoStabilizer));
             break;
 
           case 4:
-            await launchUrl(Uri.parse(AppClass.gitPAT));
+            //await launchUrl(Uri.parse(AppClass.gitPAT));
             break;
 
           case 5:
-            AppClass().alertDialog(context, 'Not Found',
-                'Sorry the project you requested not found in the repository');
+            //AppClass().alertDialog(context, 'Not Found', 'Sorry the project you requested not found in the repository');
             break;
         }
       },
