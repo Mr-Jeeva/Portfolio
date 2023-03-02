@@ -5,6 +5,7 @@ import 'package:portfolio/resource/appClass.dart';
 
 import '../../resource/colors.dart';
 import '../../resource/strings.dart';
+import 'contact.dart';
 
 class ContactMobile extends StatefulWidget {
   const ContactMobile({Key? key}) : super(key: key);
@@ -78,7 +79,9 @@ class _ContactMobileState extends State<ContactMobile> {
                     Padding(
                       padding: EdgeInsets.only(top: 50, bottom: 70),
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          showMessageDialog(context);
+                        },
                         child: Container(
                           height: AppClass().getMqHeight(context) * 0.07,
                           width: AppClass().getMqWidth(context) * 0.3,

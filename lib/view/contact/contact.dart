@@ -74,7 +74,6 @@ showMessageDialog(context) {
                 controller: contactInfoController,
                 decoration: InputDecoration(
                   hintText: 'Contact Info (Optional)',
-
                   enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
                   focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
                   border: OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
@@ -112,7 +111,18 @@ showMessageDialog(context) {
                     child: InkWell(
                       onTap: () async {
                         if (_formKey.currentState!.validate()) {
-                          AppClass().showSnackBar('Sorry, Feature is still in development', context: context);
+                          AppClass().sendEmail(nameController.text, contactInfoController.text, msgController.text).then((value) {
+                            if(value) {
+                              Navigator.pop(context);
+                              AppClass().showSnackBar('Message sent successfully', context: context);
+                            } else {
+                              Navigator.pop(context);
+                              AppClass().showSnackBar('Failed to send message, please try again later.', context: context);
+                            }
+                          }).onError((error, stackTrace) {
+                            Navigator.pop(context);
+                            AppClass().showSnackBar('Error Occurred', context: context);
+                          });
                         }
                       },
                       child: Container(

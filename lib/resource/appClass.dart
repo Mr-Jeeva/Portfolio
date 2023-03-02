@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 import 'package:portfolio/resource/styles.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -35,7 +36,8 @@ class AppClass {
         tech3: "Java"),
     WorkModel(
         projectTitle: "Hermarts",
-        projectContent: "Hermarts is an Ecommerce website/mobile application specially designed to encourage and takeout the hidden talent of women candidates, who never gets opportunities to explore their talents. It is developed with user-centric features to help the users with integrated InApp payment mode with high level security.",
+        projectContent:
+            "Hermarts is an Ecommerce website/mobile application specially designed to encourage and takeout the hidden talent of women candidates, who never gets opportunities to explore their talents. It is developed with user-centric features to help the users with integrated InApp payment mode with high level security.",
         tech1: "Android",
         tech2: "RazorPay"),
     WorkModel(
@@ -111,5 +113,16 @@ class AppClass {
                       onPressed: () => Navigator.pop(context),
                       child: Text('Okay'))
                 ]));
+  }
+
+  Future<bool> sendEmail(name, contact, msg) async {
+    var url = Uri.https('hbk-portfolio-mailer.web.app', '/sendMail');
+    var response = await post(url, body: {
+      "name": name,
+      "contactInfo": contact,
+      "message": msg
+    }).timeout(Duration(seconds: 10));
+    print(response.body);
+    return response.statusCode == 200;
   }
 }
