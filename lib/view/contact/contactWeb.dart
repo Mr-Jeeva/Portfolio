@@ -133,13 +133,20 @@ class _ContactWebState extends ConsumerState<ContactWeb> {
 
     final _formKey = GlobalKey<FormState>();
 
-    showDialog(context: context, builder: (_) => AlertDialog(
+    showDialog(context: context,
+        barrierDismissible: false,
+        builder: (_) => AlertDialog(
       backgroundColor: AppColors().primaryColor,
       titleTextStyle: TextStyle(
           color: AppColors().neonColor,
           fontSize: 18,
           fontFamily: 'sfmono'),
-      title: Text('Contact Me!'),
+      title: Row(
+        children: [
+          Expanded(flex: 9, child: Text('Contact Me!')),
+          IconButton(onPressed: () => Navigator.pop(context), icon: Icon(Icons.close, color: AppColors().textColor))
+        ],
+      ),
       content: Consumer(
         builder: (context, ref, child) {
           bool isLoading = ref.watch(progressProvider);

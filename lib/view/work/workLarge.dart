@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -6,7 +5,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/controller/generalController.dart';
 import 'package:portfolio/resource/appClass.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../resource/colors.dart';
 
@@ -60,32 +58,32 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
               StaggeredGridTile.count(
                 crossAxisCellCount: 1,
                 mainAxisCellCount: 1,
-                child: Tile(index: 0),
+                child: getTile(index: 0),
               ),
               StaggeredGridTile.count(
                 crossAxisCellCount: 1,
                 mainAxisCellCount: 1,
-                child: Tile(index: 1),
+                child: getTile(index: 1),
               ),
               StaggeredGridTile.count(
                 crossAxisCellCount: 1,
                 mainAxisCellCount: 1,
-                child: Tile(index: 2),
+                child: getTile(index: 2),
               ),
               StaggeredGridTile.count(
                 crossAxisCellCount: 1,
                 mainAxisCellCount: 1,
-                child: Tile(index: 3),
+                child: getTile(index: 3),
               ),
               StaggeredGridTile.count(
                 crossAxisCellCount: 1,
                 mainAxisCellCount: 1,
-                child: Tile(index: 4),
+                child: getTile(index: 4),
               ),
               StaggeredGridTile.count(
                 crossAxisCellCount: 1,
                 mainAxisCellCount: 1,
-                child: Tile(index: 5),
+                child: getTile(index: 5),
               ),
             ],
           ),
@@ -94,7 +92,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
     );
   }
 
-  Tile({required int index}) {
+  getTile({required int index}) {
     return InkWell(
       onTap: () async {
         switch (index) {
@@ -135,94 +133,107 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
         bool isHovered = (data == "$index");
         return Container(
           margin: EdgeInsets.all(isHovered ? 8.0 : 0.0),
-          child: Card(
-            color: AppColors().cardColor,
-            elevation: 10,
-            child: Container(
-              padding: EdgeInsets.all(15.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SvgPicture.asset(
-                        'assets/svg/folder.svg',
-                        width: 45,
-                        height: 45,
-                        color: AppColors().neonColor,
-                      ),
-                      SvgPicture.asset(
-                        'assets/svg/externalLink.svg',
-                        width: 22,
-                        height: 22,
-                        color: isHovered ? AppColors().neonColor : Colors.white,
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10.0, bottom: 8.0),
-                    child: Row(
+          child: Tooltip(
+            message: AppClass().projectList[index].projectTitle.toString() + "\n\n" + AppClass().projectList[index].projectContent.toString(),
+            padding: EdgeInsets.all(20),
+            margin: EdgeInsets.all(AppClass().getMqWidth(context) * 0.1),
+            waitDuration: Duration(seconds: 3),
+            decoration: BoxDecoration(
+              color: AppColors().primaryColor.withOpacity(0.9),
+              borderRadius: const BorderRadius.all(Radius.circular(4)),
+            ),
+            textStyle: TextStyle(color: Colors.white24),
+            preferBelow: true,
+            verticalOffset: 20,
+            child: Card(
+              color: AppColors().cardColor,
+              elevation: 10,
+              child: Container(
+                padding: EdgeInsets.all(15.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          AppClass().projectList[index].projectTitle.toString(),
-                          textAlign: TextAlign.left,
-                          style: GoogleFonts.robotoSlab(
-                              color: isHovered
-                                  ? AppColors().neonColor
-                                  : Colors.white,
-                              letterSpacing: 1,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                        SvgPicture.asset(
+                          'assets/svg/folder.svg',
+                          width: 45,
+                          height: 45,
+                          color: AppColors().neonColor,
+                        ),
+                        SvgPicture.asset(
+                          'assets/svg/externalLink.svg',
+                          width: 22,
+                          height: 22,
+                          color: isHovered ? AppColors().neonColor : Colors.white,
                         ),
                       ],
                     ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                      child: Text(
-                        AppClass().projectList[index].projectContent.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          height: 1.5,
-                          fontSize: 14,
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10.0, bottom: 8.0),
+                      child: Row(
+                        children: [
+                          Text(
+                            AppClass().projectList[index].projectTitle.toString(),
+                            textAlign: TextAlign.left,
+                            style: GoogleFonts.robotoSlab(
+                                color: isHovered
+                                    ? AppColors().neonColor
+                                    : Colors.white,
+                                letterSpacing: 1,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+                        child: Text(
+                          AppClass().projectList[index].projectContent.toString(),
+                          style: GoogleFonts.roboto(
+                            color: AppColors().textLight,
+                            letterSpacing: 1,
+                            height: 1.5,
+                            fontSize: 14,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        AppClass().projectList[index].tech1 ?? "",
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          fontSize: 12,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          AppClass().projectList[index].tech1 ?? "",
+                          style: GoogleFonts.roboto(
+                            color: AppColors().textLight,
+                            letterSpacing: 1,
+                            fontSize: 12,
+                          ),
                         ),
-                      ),
-                      Text(
-                        AppClass().projectList[index].tech2 ?? "",
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          fontSize: 12,
+                        Text(
+                          AppClass().projectList[index].tech2 ?? "",
+                          style: GoogleFonts.roboto(
+                            color: AppColors().textLight,
+                            letterSpacing: 1,
+                            fontSize: 12,
+                          ),
                         ),
-                      ),
-                      Text(
-                        AppClass().projectList[index].tech3 ?? "",
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          height: 1.5,
-                          fontSize: 12,
+                        Text(
+                          AppClass().projectList[index].tech3 ?? "",
+                          style: GoogleFonts.roboto(
+                            color: AppColors().textLight,
+                            letterSpacing: 1,
+                            height: 1.5,
+                            fontSize: 12,
+                          ),
                         ),
-                      ),
-                    ],
-                  )
-                ],
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           ),

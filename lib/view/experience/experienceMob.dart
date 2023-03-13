@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/resource/appClass.dart';
 
 import '../../controller/generalController.dart';
-import '../../model/experienceModel.dart';
+import '../../model/models.dart';
 import '../../resource/colors.dart';
 import '../../resource/strings.dart';
 

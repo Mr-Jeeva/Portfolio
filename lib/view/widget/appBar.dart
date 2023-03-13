@@ -134,7 +134,10 @@ class _ActionBarState extends ConsumerState<ActionBar> {
           }
           return Row(
             children: [
-              Expanded(child: Image.asset('assets/svg/appLogo.png')),
+              Expanded(child: Container(
+                  width: AppClass().getMqWidth(context) * 0.07,
+                  height: AppClass().getMqHeight(context) * 0.07,
+                  child: Image.asset('assets/svg/appLogo.png',))),
               Expanded(
                 flex: 9,
                 child: Row(

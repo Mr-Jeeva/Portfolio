@@ -125,94 +125,107 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
         bool isHovered = (data == "$index");
         return Container(
           margin: EdgeInsets.all(isHovered ? 8.0 : 0.0),
-          child: Card(
-            color: AppColors().cardColor,
-            elevation: 10,
-            child: Container(
-              padding: EdgeInsets.all(15.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SvgPicture.asset(
-                        'assets/svg/folder.svg',
-                        width: 35,
-                        height: 35,
-                        color: AppColors().neonColor,
-                      ),
-                      SvgPicture.asset(
-                        'assets/svg/externalLink.svg',
-                        width: 20,
-                        height: 20,
-                        color: isHovered ? AppColors().neonColor : Colors.white,
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10.0, bottom: 8.0),
-                    child: Row(
+          child: Tooltip(
+            message: AppClass().projectList[index].projectTitle.toString() + "\n\n" + AppClass().projectList[index].projectContent.toString(),
+            padding: EdgeInsets.all(20),
+            margin: EdgeInsets.all(AppClass().getMqWidth(context) * 0.1),
+            waitDuration: Duration(seconds: 3),
+            decoration: BoxDecoration(
+              color: AppColors().primaryColor.withOpacity(0.9),
+              borderRadius: const BorderRadius.all(Radius.circular(4)),
+            ),
+            textStyle: TextStyle(color: Colors.white24),
+            preferBelow: true,
+            verticalOffset: 20,
+            child: Card(
+              color: AppColors().cardColor,
+              elevation: 10,
+              child: Container(
+                padding: EdgeInsets.all(15.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          AppClass().projectList[index].projectTitle.toString(),
-                          textAlign: TextAlign.left,
-                          style: GoogleFonts.robotoSlab(
-                              color: isHovered
-                                  ? AppColors().neonColor
-                                  : Colors.white,
-                              letterSpacing: 1,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18),
+                        SvgPicture.asset(
+                          'assets/svg/folder.svg',
+                          width: 35,
+                          height: 35,
+                          color: AppColors().neonColor,
+                        ),
+                        SvgPicture.asset(
+                          'assets/svg/externalLink.svg',
+                          width: 20,
+                          height: 20,
+                          color: isHovered ? AppColors().neonColor : Colors.white,
                         ),
                       ],
                     ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                      child: Text(
-                        AppClass().projectList[index].projectContent.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          height: 1.5,
-                          fontSize: 12,
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10.0, bottom: 8.0),
+                      child: Row(
+                        children: [
+                          Text(
+                            AppClass().projectList[index].projectTitle.toString(),
+                            textAlign: TextAlign.left,
+                            style: GoogleFonts.robotoSlab(
+                                color: isHovered
+                                    ? AppColors().neonColor
+                                    : Colors.white,
+                                letterSpacing: 1,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+                        child: Text(
+                          AppClass().projectList[index].projectContent.toString(),
+                          style: GoogleFonts.roboto(
+                            color: AppColors().textLight,
+                            letterSpacing: 1,
+                            height: 1.5,
+                            fontSize: 12,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        AppClass().projectList[index].tech1 ?? "",
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          fontSize: 10,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          AppClass().projectList[index].tech1 ?? "",
+                          style: GoogleFonts.roboto(
+                            color: AppColors().textLight,
+                            letterSpacing: 1,
+                            fontSize: 10,
+                          ),
                         ),
-                      ),
-                      Text(
-                        AppClass().projectList[index].tech2 ?? "",
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          fontSize: 10,
+                        Text(
+                          AppClass().projectList[index].tech2 ?? "",
+                          style: GoogleFonts.roboto(
+                            color: AppColors().textLight,
+                            letterSpacing: 1,
+                            fontSize: 10,
+                          ),
                         ),
-                      ),
-                      Text(
-                        AppClass().projectList[index].tech3 ?? "",
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          height: 1.5,
-                          fontSize: 10,
+                        Text(
+                          AppClass().projectList[index].tech3 ?? "",
+                          style: GoogleFonts.roboto(
+                            color: AppColors().textLight,
+                            letterSpacing: 1,
+                            height: 1.5,
+                            fontSize: 10,
+                          ),
                         ),
-                      ),
-                    ],
-                  )
-                ],
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           ),

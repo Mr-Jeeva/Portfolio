@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:portfolio/responsive.dart';
+import 'package:portfolio/resource/responsive.dart';
 import 'package:portfolio/view/contact/contactMobile.dart';
 import 'package:portfolio/view/contact/contactTab.dart';
 import 'package:portfolio/view/contact/contactWeb.dart';

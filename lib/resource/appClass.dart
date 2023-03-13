@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:portfolio/controller/generalController.dart';
+import 'package:portfolio/model/models.dart';
 import 'package:portfolio/resource/styles.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../model/workModel.dart';
 
 enum ScreenType { mobile, tab, web }
 
@@ -64,7 +63,7 @@ class AppClass {
     WorkModel(
         projectTitle: "AVM",
         projectContent:
-            '''It Acts as a display of a beverage vending machine that can perform several operations like Brewing, Dispensing, Cleaning drums, and several other operations.''',
+            '''AVM - Automatic Vending Machine is one of Pradeep's stainless steel product. The project is aimed at automating the beverage vending process. It can be done through hardware that controls the main engines and a mobile app (which acts like a PCB display for the unit) that is used to personalize and make beverage. It can also perform several process like Brewing, Boiling,cleansing drum etc . The Engines (hardware) and Mobiel Application communicate using Bluetooth.''',
         tech1: "Android",
         tech2: "Tablet"),
   ];
