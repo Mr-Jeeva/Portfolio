@@ -121,7 +121,9 @@ class AppClass {
       "name": name,
       "contactInfo": contact,
       "message": msg
-    }).timeout(Duration(seconds: 10));
+    }).timeout(Duration(seconds: 10)).onError((error, stackTrace) {
+      return Response("body", 400);
+    });
     print(response.body);
     return response.statusCode == 200;
   }

@@ -6,7 +6,7 @@ import 'package:portfolio/resource/appClass.dart';
 import 'package:portfolio/resource/colors.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
-class ActionBar extends ConsumerStatefulWidget with PreferredSizeWidget {
+class ActionBar extends ConsumerStatefulWidget implements PreferredSizeWidget {
   final AutoScrollController controller;
 
   ActionBar(this.controller, {Key? key}) : super(key: key);
