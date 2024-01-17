@@ -241,7 +241,6 @@ class _ContactMobileState extends ConsumerState<ContactMobile> {
                                             ref.read(progressProvider.notifier).state = false;
                                           }).onError((error, stackTrace) {
                                             Navigator.pop(context);
-                                            ref.read(progressProvider.notifier).state = false;
                                             AppClass().showSnackBar('Error Occurred', context: context);
                                           });
                                         }

@@ -6,7 +6,7 @@ import 'package:portfolio/resource/appClass.dart';
 import 'package:portfolio/resource/colors.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
-class ActionBar extends ConsumerStatefulWidget implements PreferredSizeWidget {
+class ActionBar extends ConsumerStatefulWidget implements  PreferredSizeWidget {
   final AutoScrollController controller;
 
   ActionBar(this.controller, {Key? key}) : super(key: key);
@@ -261,7 +261,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                       onHover: (bol) {
                         if (bol) {
                           ref.read(hoverProvider.notifier).state =
-                              "contactTitle";
+                              "gameTitle";
                         } else {
                           ref.read(hoverProvider.notifier).state = "";
                         }
@@ -271,6 +271,42 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                         child: Row(
                           children: [
                             Text("04.",
+                                style: TextStyle(
+                                    color: AppColors().neonColor,
+                                    fontSize: 13,
+                                    fontFamily: 'sfmono')),
+                            Consumer(builder: (context, ref, child) {
+                              String state = ref.watch(hoverProvider);
+                              bool isHovered = (state == "gameTitle");
+                              return Text("Games",
+                                  style: TextStyle(
+                                      color: isHovered
+                                          ? AppColors().neonColor
+                                          : AppColors().textColor,
+                                      fontSize: 13));
+                            }),
+                          ],
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        widget.controller.scrollToIndex(5,
+                            preferPosition: AutoScrollPosition.begin);
+                      },
+                      onHover: (bol) {
+                        if (bol) {
+                          ref.read(hoverProvider.notifier).state =
+                          "contactTitle";
+                        } else {
+                          ref.read(hoverProvider.notifier).state = "";
+                        }
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 30.0),
+                        child: Row(
+                          children: [
+                            Text("05.",
                                 style: TextStyle(
                                     color: AppColors().neonColor,
                                     fontSize: 13,

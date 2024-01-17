@@ -132,7 +132,6 @@ class _ContactWebState extends ConsumerState<ContactWeb> {
     final msgController = TextEditingController();
 
     final _formKey = GlobalKey<FormState>();
-    ref.refresh(progressProvider);
 
     showDialog(context: context,
         barrierDismissible: false,
@@ -223,7 +222,7 @@ class _ContactWebState extends ConsumerState<ContactWeb> {
                                 onTap: () async {
                                   if (_formKey.currentState!.validate()) {
                                     ref.read(progressProvider.notifier).state = true;
-                                    await AppClass().sendEmail(nameController.text, contactInfoController.text, msgController.text).then((value) {
+                                    AppClass().sendEmail(nameController.text, contactInfoController.text, msgController.text).then((value) {
                                       if(value) {
                                         Navigator.pop(context);
                                         AppClass().showSnackBar('Message sent successfully', context: context);
@@ -234,7 +233,6 @@ class _ContactWebState extends ConsumerState<ContactWeb> {
                                       ref.read(progressProvider.notifier).state = false;
                                     }).onError((error, stackTrace) {
                                       Navigator.pop(context);
-                                      ref.read(progressProvider.notifier).state = false;
                                       AppClass().showSnackBar('Error Occurred', context: context);
                                     });
                                   }

@@ -45,7 +45,7 @@ class Strings {
       '''Experienced many technologies such as wifi (TCP/UDP), BLE, MQTT, LIVE DATA, Google ML - Tensor Flow, GraphQL and so on.''';
 
   static final expCompName3 = '''NetAccess India Ltd''';
-  static final expDesig3 = '''Senior Software Engineer''';
+  static final expDesig3 = '''Software Engineer''';
   static final expDur3 = '''Jun 2022 - Present''';
   static final expAbout3 =
   '''An entity of India's leading business conglomerate Murugappa Group of companies.''';
