@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/resource/appClass.dart';
 import 'package:portfolio/view/game/tetris.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
@@ -62,27 +64,26 @@ class _GameAreaWebState extends ConsumerState<GameAreaWeb> {
                               ref.read(hoverProvider.notifier).state = "";
                             }
                           },
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Expanded(
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                      borderRadius:
-                                      BorderRadius.all(Radius.circular(5.0)),
-                                      image: DecorationImage(
-                                          fit: BoxFit.fill,
-                                          colorFilter: ColorFilter.mode(
-                                              AppColors().primaryColor,
-                                              isHovered
-                                                  ? BlendMode.lighten
-                                                  : BlendMode.color),
-                                          image: AssetImage(
-                                              'assets/tetris.png')),
-                                      color: Colors.transparent),
-                                ),
-                              ),
-                            ],
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: isHovered ? AppColors().neonColor.withOpacity(0.2) : Colors.transparent,
+                                border: Border.all(width: 1, color: AppColors().neonColor.withOpacity(0.2))
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SvgPicture.asset("assets/svg/tetris.svg",
+                                  width: AppClass().getMqWidth(context) * 0.2,
+                                  height: AppClass().getMqHeight(context) * 0.2),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 8.0),
+                                  child: Text("Tetris",
+                                    style: GoogleFonts.quando(
+                                        fontSize: AppClass().getMqWidth(context) * 0.025,
+                                        color: Colors.white70),),
+                                )
+                              ],
+                            ),
                           ),
                         );
                       }
@@ -92,7 +93,7 @@ class _GameAreaWebState extends ConsumerState<GameAreaWeb> {
                 ],
               );
             case "tetris":
-              return Tetris();
+              return Tetris(widget.scrollController);
             default:
               return Center(child: Text("error"));
           }

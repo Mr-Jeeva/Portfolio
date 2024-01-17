@@ -7,11 +7,13 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/controller/generalController.dart';
 import 'package:portfolio/resource/appClass.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 
 import '../../resource/colors.dart';
 
 class Tetris extends ConsumerStatefulWidget {
-  const Tetris({Key? key}) : super(key: key);
+  var scrollController;
+  Tetris(this.scrollController, {Key? key}) : super(key: key);
 
   @override
   ConsumerState<Tetris> createState() => _TetrisState();
@@ -270,7 +272,7 @@ class _TetrisState extends ConsumerState<Tetris> {
                                 child: ElevatedButton(
                                     onPressed: () {
                                       ref.refresh(scoreProvider);
-
+                                      widget.scrollController.scrollToIndex(4, preferPosition: AutoScrollPosition.begin);
                                       startGame();
                                     },
                                     child: const Text('Start')),
@@ -392,6 +394,9 @@ class _TetrisState extends ConsumerState<Tetris> {
     ref.read(scrollHandlerProvider.notifier).update((state) => true);
     ocupiedPos.clear();
     currentBrick.clear();
+    if(_timer != null) {
+      _timer!.cancel();
+    }
     ref.refresh(gameScreenProvider);
     setState(() {});
   }
