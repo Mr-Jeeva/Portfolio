@@ -19,7 +19,7 @@ class _ContactMobileState extends ConsumerState<ContactMobile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: AppClass().getMqHeight(context) - 70,
+      height: AppClass().getMqHeight(context) - 100,
       padding: EdgeInsets.only(top: 50),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -37,14 +37,14 @@ class _ContactMobileState extends ConsumerState<ContactMobile> {
                           '''04.''',
                           style: TextStyle(
                               color: AppColors().neonColor,
-                              fontSize: 12,
+                              fontSize: AppClass().getMqWidth(context) * 0.04,
                               fontFamily: 'sfmono'),
                         ),
                         Text(
                           ''' What's next?''',
                           style: TextStyle(
                               color: AppColors().neonColor,
-                              fontSize: 14,
+                              fontSize: AppClass().getMqWidth(context) * 0.04,
                               fontFamily: 'sfmono'),
                         ),
                       ],
@@ -57,8 +57,7 @@ class _ContactMobileState extends ConsumerState<ContactMobile> {
                           color: AppColors().textColor,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 3,
-                          fontSize: 40,
-                        ),
+                          fontSize: AppClass().getMqWidth(context) * 0.06),
                       ),
                     ),
                     Padding(
@@ -72,8 +71,7 @@ class _ContactMobileState extends ConsumerState<ContactMobile> {
                             color: AppColors().textLight,
                             letterSpacing: 1,
                             height: 1.5,
-                            fontSize: 14,
-                          ),
+                            fontSize: AppClass().getMqWidth(context) * 0.045),
                         ),
                       ),
                     ),
@@ -85,7 +83,7 @@ class _ContactMobileState extends ConsumerState<ContactMobile> {
                         },
                         child: Container(
                           height: AppClass().getMqHeight(context) * 0.07,
-                          width: AppClass().getMqWidth(context) * 0.3,
+                          width: AppClass().getMqWidth(context) * 0.5,
                           decoration: BoxDecoration(
                               color: Colors.transparent,
                               borderRadius: BorderRadius.all(Radius.circular(3.0)),
@@ -95,7 +93,7 @@ class _ContactMobileState extends ConsumerState<ContactMobile> {
                             child: Text('Say Hello!',
                                 style: TextStyle(
                                     color: AppColors().neonColor,
-                                    fontSize: 10,
+                                    fontSize: AppClass().getMqWidth(context) * 0.03,
                                     letterSpacing: 1,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: 'sfmono')),

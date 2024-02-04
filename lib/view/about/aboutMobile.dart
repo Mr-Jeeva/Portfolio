@@ -17,6 +17,7 @@ class _AboutMobileState extends State<AboutMobile> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: AppClass().getMqHeight(context) - 70,
       margin: EdgeInsets.only(left: 20, right: 20),
       padding: EdgeInsets.only(bottom: 30),
       child: Column(

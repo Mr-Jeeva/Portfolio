@@ -20,7 +20,7 @@ class _IntroMobileState extends State<IntroMobile> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.transparent,
-      height: AppClass().getMqHeight(context) - 50,
+      height: AppClass().getMqHeight(context) - 100,
       padding: EdgeInsets.only(left: 20.0, right: 20.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -33,7 +33,7 @@ class _IntroMobileState extends State<IntroMobile> {
                 Strings.welcomeTxt,
                 style: TextStyle(
                     color: AppColors().neonColor,
-                    fontSize: 17,
+                    fontSize: AppClass().getMqWidth(context) * 0.045,
                     fontFamily: 'sfmono'),
               ),
               Padding(
@@ -44,7 +44,7 @@ class _IntroMobileState extends State<IntroMobile> {
                     color: AppColors().textColor,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 3,
-                    fontSize: 25,
+                    fontSize: AppClass().getMqWidth(context) * 0.08,
                   ),
                 ),
               ),
@@ -57,7 +57,7 @@ class _IntroMobileState extends State<IntroMobile> {
                       color: AppColors().textLight,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 3,
-                      fontSize: 24,
+                      fontSize: AppClass().getMqWidth(context) * 0.055,
                     ),
                   ),
                 ),
@@ -72,7 +72,7 @@ class _IntroMobileState extends State<IntroMobile> {
                             color: AppColors().textLight,
                             letterSpacing: 1,
                             height: 1.5,
-                            fontSize: 17,
+                            fontSize: AppClass().getMqWidth(context) * 0.045,
                           ),
                           children: <TextSpan>[
                         TextSpan(
