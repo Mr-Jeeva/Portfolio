@@ -76,7 +76,7 @@ class _ContactWebState extends ConsumerState<ContactWeb> {
                 padding: EdgeInsets.only(top: 50, bottom: 70),
                 child: InkWell(
                   onTap: () {
-                    showMessageDialog(context);
+                    showWebMessageDialog(context);
                   },
                   child: Container(
                     height: AppClass().getMqHeight(context) * 0.09,
@@ -126,7 +126,7 @@ class _ContactWebState extends ConsumerState<ContactWeb> {
     );
   }
 
-  showMessageDialog(context) {
+  showWebMessageDialog(context) {
     final nameController = TextEditingController();
     final contactInfoController = TextEditingController();
     final msgController = TextEditingController();
@@ -212,6 +212,17 @@ class _ContactWebState extends ConsumerState<ContactWeb> {
                         ),
                       ),
                       Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: Row(
+                          children: [
+                            Text("Note: Please don't send trash msgs, atleast say hi :(", style: TextStyle(
+                                fontSize: AppClass().getMqWidth(context) * 0.01,
+                                color: Colors.grey
+                            ),),
+                          ],
+                        ),
+                      ),
+                      Padding(
                         padding: const EdgeInsets.only(top: 25.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -239,7 +250,7 @@ class _ContactWebState extends ConsumerState<ContactWeb> {
                                 },
                                 child: Container(
                                   height: AppClass().getMqHeight(context) * 0.06,
-                                  width: AppClass().getMqWidth(context) * 0.07,
+                                  width: AppClass().getMqWidth(context) * 0.08,
                                   decoration: BoxDecoration(
                                       color: Colors.transparent,
                                       borderRadius: BorderRadius.all(Radius.circular(3.0)),

@@ -45,107 +45,82 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                           color: AppColors().cardColor,
                           itemBuilder: (c) => <PopupMenuEntry>[
                             PopupMenuItem(
+                              onTap: () =>  mOnTab(1),
                               child: Container(
                                   width: 90.0,
-                                  child: InkWell(
-                                    onTap: () {
-                                      Navigator.pop(context);
-                                      widget.controller.scrollToIndex(1, preferPosition: AutoScrollPosition.begin);
-                                    },
-                                    child: Row(
-                                      children: [
-                                        Icon(Icons.account_circle_rounded,
-                                            size: 18),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 10.0),
-                                          child: Text(
-                                            'About',
-                                            style: GoogleFonts.roboto(),
-                                          ),
+                                  child: Row(
+                                    children: [
+                                      Icon(Icons.account_circle_rounded,
+                                          size: 18),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 10.0),
+                                        child: Text(
+                                          'About',
+                                          style: GoogleFonts.roboto(),
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   )),
                             ),
                             PopupMenuItem(
-                              child: InkWell(
-                                onTap: () {
-                                  Navigator.pop(context);
-                                  widget.controller.scrollToIndex(2, preferPosition: AutoScrollPosition.begin);
-                                },
-                                child: Row(
-                                  children: [
-                                    Icon(Icons.travel_explore_rounded, size: 18),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 10.0),
-                                      child: Text(
-                                        'Experience',
-                                        style: GoogleFonts.roboto(),
-                                      ),
+                              onTap: () =>  mOnTab(2),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.travel_explore_rounded, size: 18),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10.0),
+                                    child: Text(
+                                      'Experience',
+                                      style: GoogleFonts.roboto(),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                             PopupMenuItem(
-                              child: InkWell(
-                                onTap: () {
-                                  Navigator.pop(context);
-                                  widget.controller.scrollToIndex(3, preferPosition: AutoScrollPosition.begin);
-                                },
-                                child: Row(
-                                  children: [
-                                    Icon(Icons.computer_rounded, size: 18),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 10.0),
-                                      child: Text(
-                                        'Work',
-                                        style: GoogleFonts.roboto(),
-                                      ),
+                              onTap: () =>  mOnTab(3),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.computer_rounded, size: 18),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10.0),
+                                    child: Text(
+                                      'Work',
+                                      style: GoogleFonts.roboto(),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                             PopupMenuItem(
-                              child: InkWell(
-                                onTap: () {
-                                  Navigator.pop(context);
-                                  widget.controller.scrollToIndex(4, preferPosition: AutoScrollPosition.begin);
-                                },
-                                child: Row(
-                                  children: [
-                                    Icon(Icons.games, size: 18),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 10.0),
-                                      child: Text(
-                                        'Games',
-                                        style: GoogleFonts.roboto(),
-                                      ),
+                              onTap: () =>  mOnTab(4),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.games, size: 18),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10.0),
+                                    child: Text(
+                                      'Games',
+                                      style: GoogleFonts.roboto(),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                             PopupMenuItem(
-                              child: InkWell(
-                                onTap: () {
-                                  Navigator.pop(context);
-                                  widget.controller.scrollToIndex(5, preferPosition: AutoScrollPosition.begin);
-                                },
-                                child: Row(
-                                  children: [
-                                    Icon(Icons.phone_rounded, size: 18),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 10.0),
-                                      child: Text(
-                                        'Contact',
-                                        style: GoogleFonts.roboto(),
-                                      ),
+                              onTap: () => mOnTab(5),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.phone_rounded, size: 18),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10.0),
+                                    child: Text(
+                                      'Contact',
+                                      style: GoogleFonts.roboto(),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                           ],
@@ -381,5 +356,9 @@ class _ActionBarState extends ConsumerState<ActionBar> {
             ],
           );
         }());
+  }
+
+  mOnTab(int i) {
+    widget.controller.scrollToIndex(i, preferPosition: AutoScrollPosition.begin);
   }
 }

@@ -17,6 +17,7 @@ class _AboutTabState extends State<AboutTab> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: AppClass().getMqHeight(context) - 70,
       margin: EdgeInsets.only(
           left: AppClass().getMqWidth(context) * 0.03,
           right: AppClass().getMqWidth(context) * 0.03),

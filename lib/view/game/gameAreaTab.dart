@@ -27,7 +27,7 @@ class _GameAreaWebState extends ConsumerState<GameAreaTab> {
             padding: const EdgeInsets.all(8.0),
             child: Icon(Icons.image_rounded),
           ),
-          Text("Sorry!, Currently this Section only available on web"),
+          Text("Sorry!, Currently this Section only available on web(Desktop)"),
         ],
       ),
     );

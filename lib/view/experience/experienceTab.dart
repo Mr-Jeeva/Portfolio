@@ -40,7 +40,7 @@ class _ExperienceTabState extends State<ExperienceTab> {
                     Container(
                       width: AppClass().getMqWidth(context) * 0.5,
                       child: Text(
-                        Strings.expAbout1,
+                        Strings.expAbout3,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -67,7 +67,7 @@ class _ExperienceTabState extends State<ExperienceTab> {
                     Container(
                       width: AppClass().getMqWidth(context) * 0.5,
                       child: Text(
-                        Strings.expAbout1_2,
+                        Strings.expAbout3_2,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -94,7 +94,7 @@ class _ExperienceTabState extends State<ExperienceTab> {
                     Container(
                       width: AppClass().getMqWidth(context) * 0.5,
                       child: Text(
-                        Strings.expAbout1_3,
+                        Strings.expAbout3_3,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -218,7 +218,7 @@ class _ExperienceTabState extends State<ExperienceTab> {
                     Container(
                       width: AppClass().getMqWidth(context) * 0.5,
                       child: Text(
-                        Strings.expAbout3,
+                        Strings.expAbout1,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -245,7 +245,7 @@ class _ExperienceTabState extends State<ExperienceTab> {
                     Container(
                       width: AppClass().getMqWidth(context) * 0.5,
                       child: Text(
-                        Strings.expAbout3_2,
+                        Strings.expAbout1_2,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -272,7 +272,7 @@ class _ExperienceTabState extends State<ExperienceTab> {
                     Container(
                       width: AppClass().getMqWidth(context) * 0.5,
                       child: Text(
-                        Strings.expAbout3_3,
+                        Strings.expAbout1_3,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -289,7 +289,7 @@ class _ExperienceTabState extends State<ExperienceTab> {
     ];
 
     return Container(
-      height: AppClass().getMqHeight(context) - 100,
+      height: AppClass().getMqHeight(context) - 70,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,

@@ -76,7 +76,7 @@ class _ContactTabState extends ConsumerState<ContactTab> {
                 padding: EdgeInsets.only(top: 50, bottom: 70),
                 child: InkWell(
                   onTap: () {
-                    showMessageDialog(context);
+                    showTabMessageDialog(context);
                   },
                   child: Container(
                     height: AppClass().getMqHeight(context) * 0.09,
@@ -126,7 +126,7 @@ class _ContactTabState extends ConsumerState<ContactTab> {
     );
   }
 
-  showMessageDialog(context) {
+  showTabMessageDialog(context) {
     final nameController = TextEditingController();
     final contactInfoController = TextEditingController();
     final msgController = TextEditingController();
@@ -155,11 +155,11 @@ class _ContactTabState extends ConsumerState<ContactTab> {
                 Container(
                   color: AppColors().primaryColor,
                   width: AppClass().getMqWidth(context) * 0.5,
-                  height: AppClass().getMqHeight(context) * 0.7,
                   child: Form(
                     key: _formKey,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         TextFormField(
                           controller: nameController,
@@ -212,6 +212,17 @@ class _ContactTabState extends ConsumerState<ContactTab> {
                           ),
                         ),
                         Padding(
+                          padding: const EdgeInsets.only(top: 8.0),
+                          child: Row(
+                            children: [
+                              Text("Note: Please don't send trash msgs, atleast say hi :(", style: TextStyle(
+                                  fontSize: AppClass().getMqWidth(context) * 0.02,
+                                  color: Colors.grey
+                              ),),
+                            ],
+                          ),
+                        ),
+                        Padding(
                           padding: const EdgeInsets.only(top: 25.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -239,7 +250,7 @@ class _ContactTabState extends ConsumerState<ContactTab> {
                                   },
                                   child: Container(
                                     height: AppClass().getMqHeight(context) * 0.06,
-                                    width: AppClass().getMqWidth(context) * 0.07,
+                                    width: AppClass().getMqWidth(context) * 0.2,
                                     decoration: BoxDecoration(
                                         color: Colors.transparent,
                                         borderRadius: BorderRadius.all(Radius.circular(3.0)),
