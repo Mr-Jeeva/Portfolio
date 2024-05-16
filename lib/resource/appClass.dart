@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:portfolio/model/models.dart';
+import 'package:portfolio/model/experienceModel.dart';
 import 'package:portfolio/resource/styles.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 
 enum ScreenType { mobile, tab, web }
 
@@ -13,15 +12,13 @@ class AppClass {
   ScrollController controller = ScrollController();
 
   /* URL */
-  static final resumeDownloadURL =
-      '''https://jeeva-portfolio.s3.amazonaws.com/JEEVANANDHAM's+Resume.pdf''';
+  static final resumeDownloadURL = '''https://jeeva-portfolio.s3.amazonaws.com/JEEVANANDHAM's+Resume.pdf''';
 
   static final gitSafeC19 = '''https://github.com/jeeva-HBK/SafeC19''';
 
   // static final gitHermarts = '''https://github.com/jeeva-HBK/SafeC19''';
   static final gitWtIot = '''https://github.com/jeeva-HBK/AutoChem''';
-  static final gitAutoStabilizer =
-      '''https://github.com/jeeva-HBK/AutoStabilizer''';
+  static final gitAutoStabilizer = '''https://github.com/jeeva-HBK/AutoStabilizer''';
   static final gitPAT = '''https://github.com/jeeva-HBK/PAT''';
 
   // static final gitAVM = '''https://github.com/jeeva-HBK/SafeC19''';
@@ -42,8 +39,7 @@ class AppClass {
         tech2: "RazorPay"),
     WorkModel(
         projectTitle: "WT-IoT",
-        projectContent:
-            '''It’s a water treatment process controller which can control all the sensors, calibration process, and staff management.''',
+        projectContent: '''It’s a water treatment process controller which can control all the sensors, calibration process, and staff management.''',
         tech1: "Android",
         tech2: "TCP",
         tech3: "API"),
@@ -83,8 +79,7 @@ class AppClass {
   }
 
   showSnackBar(String msg, {BuildContext? context}) {
-    ScaffoldMessenger.of(context ?? lastContext!)
-        .showSnackBar(SnackBar(content: Text(msg)));
+    ScaffoldMessenger.of(context ?? lastContext!).showSnackBar(SnackBar(content: Text(msg)));
   }
 
   ScreenType getScreenType(BuildContext context) {
@@ -105,23 +100,14 @@ class AppClass {
     showDialog(
         context: context,
         builder: (_) => AlertDialog(
-                title: Text(title, style: TxtStyle().boldWhite(context)),
-                content: Text(msg),
-                actions: [
-                  ElevatedButton(
-                      style: ElevatedButton.styleFrom(primary: Colors.green),
-                      onPressed: () => Navigator.pop(context),
-                      child: Text('Okay'))
-                ]));
+            title: Text(title, style: TxtStyle().boldWhite(context)),
+            content: Text(msg),
+            actions: [ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.green), onPressed: () => Navigator.pop(context), child: Text('Okay'))]));
   }
 
   Future<bool> sendEmail(name, contact, msg) async {
     var url = Uri.https('hbk-portfolio-mailer.web.app', '/sendMail');
-    var response = await post(url, body: {
-      "name": name,
-      "contactInfo": contact,
-      "message": msg
-    }).timeout(Duration(seconds: 10));
+    var response = await post(url, body: {"name": name, "contactInfo": contact, "message": msg}).timeout(Duration(seconds: 10));
     print(response.body);
     return response.statusCode == 200;
   }

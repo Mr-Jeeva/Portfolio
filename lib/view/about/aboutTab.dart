@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -18,9 +17,7 @@ class _AboutTabState extends State<AboutTab> {
   Widget build(BuildContext context) {
     return Container(
       height: AppClass().getMqHeight(context) - 70,
-      margin: EdgeInsets.only(
-          left: AppClass().getMqWidth(context) * 0.03,
-          right: AppClass().getMqWidth(context) * 0.03),
+      margin: EdgeInsets.only(left: AppClass().getMqWidth(context) * 0.03, right: AppClass().getMqWidth(context) * 0.03),
       padding: EdgeInsets.only(bottom: 50),
       child: Column(
         mainAxisSize: MainAxisSize.max,
@@ -30,22 +27,12 @@ class _AboutTabState extends State<AboutTab> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               RichText(
-                text: TextSpan(
-                    text: "01.",
-                    style: TextStyle(
-                        color: AppColors().neonColor,
-                        fontSize: 20,
-                        fontFamily: 'sfmono'),
-                    children: <TextSpan>[
-                      TextSpan(
-                        text: ' About Me',
-                        style: GoogleFonts.robotoSlab(
-                            color: Colors.white,
-                            letterSpacing: 1,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 25),
-                      )
-                    ]),
+                text: TextSpan(text: "01.", style: TextStyle(color: AppColors().neonColor, fontSize: 20, fontFamily: 'sfmono'), children: <TextSpan>[
+                  TextSpan(
+                    text: ' About Me',
+                    style: GoogleFonts.robotoSlab(color: Colors.white, letterSpacing: 1, fontWeight: FontWeight.bold, fontSize: 25),
+                  )
+                ]),
               ),
               Container(
                 height: 0.5,
@@ -112,60 +99,56 @@ class _AboutTabState extends State<AboutTab> {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 20.0),
-                      child: GridView.count(
-                          crossAxisCount: 2,
-                          shrinkWrap: true,
-                          childAspectRatio: 10,
+                      child: GridView.count(crossAxisCount: 2, shrinkWrap: true, childAspectRatio: 10, children: [
+                        Row(
                           children: [
-                            Row(
-                              children: [
-                                Icon(Icons.arrow_right),
-                                Text(Strings.tech1,
-                                    style: GoogleFonts.robotoFlex(
-                                      color: AppColors().textLight,
-                                      letterSpacing: 1,
-                                      height: 1.5,
-                                      fontSize: 17,
-                                    )),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Icon(Icons.arrow_right),
-                                Text(Strings.tech2,
-                                    style: GoogleFonts.robotoFlex(
-                                      color: AppColors().textLight,
-                                      letterSpacing: 1,
-                                      height: 1.5,
-                                      fontSize: 17,
-                                    )),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Icon(Icons.arrow_right),
-                                Text(Strings.tech3,
-                                    style: GoogleFonts.robotoFlex(
-                                      color: AppColors().textLight,
-                                      letterSpacing: 1,
-                                      height: 1.5,
-                                      fontSize: 17,
-                                    )),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Icon(Icons.arrow_right),
-                                Text(Strings.tech4,
-                                    style: GoogleFonts.robotoFlex(
-                                      color: AppColors().textLight,
-                                      letterSpacing: 1,
-                                      height: 1.5,
-                                      fontSize: 17,
-                                    )),
-                              ],
-                            ),
-                          ]),
+                            Icon(Icons.arrow_right),
+                            Text(Strings.tech1,
+                                style: GoogleFonts.robotoFlex(
+                                  color: AppColors().textLight,
+                                  letterSpacing: 1,
+                                  height: 1.5,
+                                  fontSize: 17,
+                                )),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Icon(Icons.arrow_right),
+                            Text(Strings.tech2,
+                                style: GoogleFonts.robotoFlex(
+                                  color: AppColors().textLight,
+                                  letterSpacing: 1,
+                                  height: 1.5,
+                                  fontSize: 17,
+                                )),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Icon(Icons.arrow_right),
+                            Text(Strings.tech3,
+                                style: GoogleFonts.robotoFlex(
+                                  color: AppColors().textLight,
+                                  letterSpacing: 1,
+                                  height: 1.5,
+                                  fontSize: 17,
+                                )),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Icon(Icons.arrow_right),
+                            Text(Strings.tech4,
+                                style: GoogleFonts.robotoFlex(
+                                  color: AppColors().textLight,
+                                  letterSpacing: 1,
+                                  height: 1.5,
+                                  fontSize: 17,
+                                )),
+                          ],
+                        ),
+                      ]),
                     ),
                   ],
                 ),

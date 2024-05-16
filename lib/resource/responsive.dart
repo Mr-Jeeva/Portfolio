@@ -4,8 +4,7 @@ import 'package:portfolio/resource/appClass.dart';
 class Responsive extends StatefulWidget {
   var mobileView, webView, tabView;
 
-  Responsive({Key? key, this.mobileView, this.tabView, this.webView})
-      : super(key: key);
+  Responsive({Key? key, this.mobileView, this.tabView, this.webView}) : super(key: key);
 
   @override
   State<Responsive> createState() => _ResponsiveState();

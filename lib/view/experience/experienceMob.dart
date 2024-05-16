@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/resource/appClass.dart';
 
 import '../../controller/generalController.dart';
-import '../../model/models.dart';
+import '../../model/experienceModel.dart';
 import '../../resource/colors.dart';
 import '../../resource/strings.dart';
 
@@ -42,12 +42,7 @@ class _ExperienceMobState extends State<ExperienceMob> {
                         padding: const EdgeInsets.only(right: 15.0),
                         child: Text(
                           Strings.expAbout3,
-                          style: TextStyle(
-                              color: AppColors().textLight,
-                              letterSpacing: 1,
-                              height: 1.5,
-                              fontSize: 13,
-                              fontFamily: 'sfmono'),
+                          style: TextStyle(color: AppColors().textLight, letterSpacing: 1, height: 1.5, fontSize: 13, fontFamily: 'sfmono'),
                         ),
                       ),
                     ),
@@ -71,12 +66,7 @@ class _ExperienceMobState extends State<ExperienceMob> {
                         padding: const EdgeInsets.only(right: 15.0),
                         child: Text(
                           Strings.expAbout3_2,
-                          style: TextStyle(
-                              color: AppColors().textLight,
-                              letterSpacing: 1,
-                              height: 1.5,
-                              fontSize: 13,
-                              fontFamily: 'sfmono'),
+                          style: TextStyle(color: AppColors().textLight, letterSpacing: 1, height: 1.5, fontSize: 13, fontFamily: 'sfmono'),
                         ),
                       ),
                     ),
@@ -100,12 +90,7 @@ class _ExperienceMobState extends State<ExperienceMob> {
                         padding: const EdgeInsets.only(right: 15.0),
                         child: Text(
                           Strings.expAbout3_3,
-                          style: TextStyle(
-                              color: AppColors().textLight,
-                              letterSpacing: 1,
-                              height: 1.5,
-                              fontSize: 13,
-                              fontFamily: 'sfmono'),
+                          style: TextStyle(color: AppColors().textLight, letterSpacing: 1, height: 1.5, fontSize: 13, fontFamily: 'sfmono'),
                         ),
                       ),
                     ),
@@ -137,12 +122,7 @@ class _ExperienceMobState extends State<ExperienceMob> {
                         padding: const EdgeInsets.only(right: 15.0),
                         child: Text(
                           Strings.expAbout2,
-                          style: TextStyle(
-                              color: AppColors().textLight,
-                              letterSpacing: 1,
-                              height: 1.5,
-                              fontSize: 13,
-                              fontFamily: 'sfmono'),
+                          style: TextStyle(color: AppColors().textLight, letterSpacing: 1, height: 1.5, fontSize: 13, fontFamily: 'sfmono'),
                         ),
                       ),
                     ),
@@ -166,12 +146,7 @@ class _ExperienceMobState extends State<ExperienceMob> {
                         padding: const EdgeInsets.only(right: 15.0),
                         child: Text(
                           Strings.expAbout2_2,
-                          style: TextStyle(
-                              color: AppColors().textLight,
-                              letterSpacing: 1,
-                              height: 1.5,
-                              fontSize: 13,
-                              fontFamily: 'sfmono'),
+                          style: TextStyle(color: AppColors().textLight, letterSpacing: 1, height: 1.5, fontSize: 13, fontFamily: 'sfmono'),
                         ),
                       ),
                     ),
@@ -195,12 +170,7 @@ class _ExperienceMobState extends State<ExperienceMob> {
                         padding: const EdgeInsets.only(right: 15.0),
                         child: Text(
                           Strings.expAbout2_3,
-                          style: TextStyle(
-                              color: AppColors().textLight,
-                              letterSpacing: 1,
-                              height: 1.5,
-                              fontSize: 13,
-                              fontFamily: 'sfmono'),
+                          style: TextStyle(color: AppColors().textLight, letterSpacing: 1, height: 1.5, fontSize: 13, fontFamily: 'sfmono'),
                         ),
                       ),
                     ),
@@ -216,7 +186,10 @@ class _ExperienceMobState extends State<ExperienceMob> {
           points: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(right: 5.0, top: 10.0,),
+                padding: const EdgeInsets.only(
+                  right: 5.0,
+                  top: 10.0,
+                ),
                 child: Row(
                   children: [
                     Padding(
@@ -232,12 +205,7 @@ class _ExperienceMobState extends State<ExperienceMob> {
                         padding: const EdgeInsets.only(right: 15.0),
                         child: Text(
                           Strings.expAbout1,
-                          style: TextStyle(
-                              color: AppColors().textLight,
-                              letterSpacing: 1,
-                              height: 1.5,
-                              fontSize: 13,
-                              fontFamily: 'sfmono'),
+                          style: TextStyle(color: AppColors().textLight, letterSpacing: 1, height: 1.5, fontSize: 13, fontFamily: 'sfmono'),
                         ),
                       ),
                     )
@@ -261,12 +229,7 @@ class _ExperienceMobState extends State<ExperienceMob> {
                         padding: const EdgeInsets.only(right: 15.0),
                         child: Text(
                           Strings.expAbout1_2,
-                          style: TextStyle(
-                              color: AppColors().textLight,
-                              letterSpacing: 1,
-                              height: 1.5,
-                              fontSize: 13,
-                              fontFamily: 'sfmono'),
+                          style: TextStyle(color: AppColors().textLight, letterSpacing: 1, height: 1.5, fontSize: 13, fontFamily: 'sfmono'),
                         ),
                       ),
                     ),
@@ -290,12 +253,7 @@ class _ExperienceMobState extends State<ExperienceMob> {
                         padding: const EdgeInsets.only(right: 15.0),
                         child: Text(
                           Strings.expAbout1_3,
-                          style: TextStyle(
-                              color: AppColors().textLight,
-                              letterSpacing: 1,
-                              height: 1.5,
-                              fontSize: 13,
-                              fontFamily: 'sfmono'),
+                          style: TextStyle(color: AppColors().textLight, letterSpacing: 1, height: 1.5, fontSize: 13, fontFamily: 'sfmono'),
                         ),
                       ),
                     ),
@@ -316,22 +274,12 @@ class _ExperienceMobState extends State<ExperienceMob> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               RichText(
-                text: TextSpan(
-                    text: "02.",
-                    style: TextStyle(
-                        color: AppColors().neonColor,
-                        fontSize: 20,
-                        fontFamily: 'sfmono'),
-                    children: <TextSpan>[
-                      TextSpan(
-                        text: ''' Where I've Worked''',
-                        style: GoogleFonts.robotoSlab(
-                            color: Colors.white,
-                            letterSpacing: 1,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 25),
-                      )
-                    ]),
+                text: TextSpan(text: "02.", style: TextStyle(color: AppColors().neonColor, fontSize: 20, fontFamily: 'sfmono'), children: <TextSpan>[
+                  TextSpan(
+                    text: ''' Where I've Worked''',
+                    style: GoogleFonts.robotoSlab(color: Colors.white, letterSpacing: 1, fontWeight: FontWeight.bold, fontSize: 25),
+                  )
+                ]),
               ),
               Container(
                 height: 0.5,
@@ -347,9 +295,7 @@ class _ExperienceMobState extends State<ExperienceMob> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 20.0, bottom: 10.0, left: 10, right: 10),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                  child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                     Expanded(
                       child: InkWell(
                         onTap: () {
@@ -358,24 +304,11 @@ class _ExperienceMobState extends State<ExperienceMob> {
                         child: Container(
                           padding: EdgeInsets.all(10.0),
                           decoration: BoxDecoration(
-                              color: data == 0
-                                  ? AppColors().cardColor
-                                  : Colors.transparent,
-                              border: Border(
-                                  left: BorderSide(
-                                      color: data == 0 ? AppColors().neonColor : Colors.white,
-                                      width: 2))),
+                              color: data == 0 ? AppColors().cardColor : Colors.transparent, border: Border(left: BorderSide(color: data == 0 ? AppColors().neonColor : Colors.white, width: 2))),
                           child: Text(
                             'Netaccess',
                             textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: data == 0
-                                    ? AppColors().neonColor
-                                    : AppColors().textLight,
-                                height: 1.5,
-                                fontSize: 14,
-                                fontFamily: 'sfmono'),
+                            style: TextStyle(fontWeight: FontWeight.bold, color: data == 0 ? AppColors().neonColor : AppColors().textLight, height: 1.5, fontSize: 14, fontFamily: 'sfmono'),
                           ),
                         ),
                       ),
@@ -388,26 +321,11 @@ class _ExperienceMobState extends State<ExperienceMob> {
                         child: Container(
                           padding: EdgeInsets.all(10.0),
                           decoration: BoxDecoration(
-                              color: data == 1
-                                  ? AppColors().cardColor
-                                  : Colors.transparent,
-                              border: Border(
-                                  left: BorderSide(
-                                      color: data == 1
-                                          ? AppColors().neonColor
-                                          : Colors.white,
-                                      width: 2))),
+                              color: data == 1 ? AppColors().cardColor : Colors.transparent, border: Border(left: BorderSide(color: data == 1 ? AppColors().neonColor : Colors.white, width: 2))),
                           child: Text(
                             'Rax-Tech',
                             textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: data == 1
-                                    ? AppColors().neonColor
-                                    : AppColors().textLight,
-                                height: 1.5,
-                                fontSize: 14,
-                                fontFamily: 'sfmono'),
+                            style: TextStyle(fontWeight: FontWeight.bold, color: data == 1 ? AppColors().neonColor : AppColors().textLight, height: 1.5, fontSize: 14, fontFamily: 'sfmono'),
                           ),
                         ),
                       ),
@@ -420,26 +338,11 @@ class _ExperienceMobState extends State<ExperienceMob> {
                         child: Container(
                           padding: EdgeInsets.all(10.0),
                           decoration: BoxDecoration(
-                              color: data == 2
-                                  ? AppColors().cardColor
-                                  : Colors.transparent,
-                              border: Border(
-                                  left: BorderSide(
-                                      color: data == 2
-                                          ? AppColors().neonColor
-                                          : Colors.white,
-                                      width: 2))),
+                              color: data == 2 ? AppColors().cardColor : Colors.transparent, border: Border(left: BorderSide(color: data == 2 ? AppColors().neonColor : Colors.white, width: 2))),
                           child: Text(
                             'Techno Kryon',
                             textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: data == 2
-                                    ? AppColors().neonColor
-                                    : AppColors().textLight,
-                                height: 1.5,
-                                fontSize: 14,
-                                fontFamily: 'sfmono'),
+                            style: TextStyle(fontWeight: FontWeight.bold, color: data == 2 ? AppColors().neonColor : AppColors().textLight, height: 1.5, fontSize: 14, fontFamily: 'sfmono'),
                           ),
                         ),
                       ),
@@ -454,32 +357,19 @@ class _ExperienceMobState extends State<ExperienceMob> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
-                          experienceList[data].desig.toString(),
-                          style: GoogleFonts.roboto(
-                              color: AppColors().textColor,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 1,
-                              fontSize: 24)),
+                      Text(experienceList[data].desig.toString(), style: GoogleFonts.roboto(color: AppColors().textColor, fontWeight: FontWeight.bold, letterSpacing: 1, fontSize: 24)),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(
                           '@${experienceList[data].compName}',
-                          style: GoogleFonts.roboto(
-                              color: AppColors().neonColor,
-                              fontSize: 20),
+                          style: GoogleFonts.roboto(color: AppColors().neonColor, fontSize: 20),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 15.0),
                         child: Text(
                           experienceList[data].duration.toString(),
-                          style: TextStyle(
-                              color: AppColors().textLight,
-                              letterSpacing: 1,
-                              height: 1.5,
-                              fontSize: 13,
-                              fontFamily: 'sfmono'),
+                          style: TextStyle(color: AppColors().textLight, letterSpacing: 1, height: 1.5, fontSize: 13, fontFamily: 'sfmono'),
                         ),
                       ),
                       Padding(

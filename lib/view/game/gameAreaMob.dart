@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/resource/appClass.dart';
-import 'package:portfolio/view/game/tetris.dart';
-
-import '../../controller/generalController.dart';
-import '../../resource/colors.dart';
-
 
 class GameAreaMob extends ConsumerStatefulWidget {
   const GameAreaMob({Key? key}) : super(key: key);
@@ -17,7 +12,6 @@ class GameAreaMob extends ConsumerStatefulWidget {
 class _GameAreaWebState extends ConsumerState<GameAreaMob> {
   @override
   Widget build(BuildContext context) {
-
     return Container(
       height: AppClass().getMqHeight(context) - 70,
       child: Column(

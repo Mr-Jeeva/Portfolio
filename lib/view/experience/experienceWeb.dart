@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/resource/appClass.dart';
 
 import '../../controller/generalController.dart';
-import '../../model/models.dart';
+import '../../model/experienceModel.dart';
 import '../../resource/colors.dart';
 import '../../resource/strings.dart';
 
@@ -338,7 +338,9 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                       children: [
                         InkWell(
                           onTap: () {
-                            ref.read(selectedExpProvider.notifier).state = 0;
+                            ref
+                                .read(selectedExpProvider.notifier)
+                                .state = 0;
                           },
                           child: Container(
                             padding: EdgeInsets.all(10.0),
@@ -367,7 +369,9 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                         ),
                         InkWell(
                           onTap: () {
-                            ref.read(selectedExpProvider.notifier).state = 1;
+                            ref
+                                .read(selectedExpProvider.notifier)
+                                .state = 1;
                           },
                           child: Container(
                             padding: EdgeInsets.all(10.0),
@@ -396,7 +400,9 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                         ),
                         InkWell(
                           onTap: () {
-                            ref.read(selectedExpProvider.notifier).state = 2;
+                            ref
+                                .read(selectedExpProvider.notifier)
+                                .state = 2;
                           },
                           child: Container(
                             padding: EdgeInsets.all(10.0),

@@ -6,9 +6,9 @@ import 'package:scroll_to_index/scroll_to_index.dart';
 import 'gameAreaMob.dart';
 import 'gameAreaTab.dart';
 
-
 class GameArea extends StatefulWidget {
   var mScrollController;
+
   GameArea(this.mScrollController, {Key? key}) : super(key: key);
 
   @override

@@ -35,17 +35,11 @@ class _ContactMobileState extends ConsumerState<ContactMobile> {
                       children: [
                         Text(
                           '''04.''',
-                          style: TextStyle(
-                              color: AppColors().neonColor,
-                              fontSize: AppClass().getMqWidth(context) * 0.04,
-                              fontFamily: 'sfmono'),
+                          style: TextStyle(color: AppColors().neonColor, fontSize: AppClass().getMqWidth(context) * 0.04, fontFamily: 'sfmono'),
                         ),
                         Text(
                           ''' What's next?''',
-                          style: TextStyle(
-                              color: AppColors().neonColor,
-                              fontSize: AppClass().getMqWidth(context) * 0.04,
-                              fontFamily: 'sfmono'),
+                          style: TextStyle(color: AppColors().neonColor, fontSize: AppClass().getMqWidth(context) * 0.04, fontFamily: 'sfmono'),
                         ),
                       ],
                     ),
@@ -53,11 +47,7 @@ class _ContactMobileState extends ConsumerState<ContactMobile> {
                       padding: const EdgeInsets.only(top: 8.0),
                       child: Text(
                         'Get In Touch',
-                        style: GoogleFonts.robotoSlab(
-                          color: AppColors().textColor,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 3,
-                          fontSize: AppClass().getMqWidth(context) * 0.06),
+                        style: GoogleFonts.robotoSlab(color: AppColors().textColor, fontWeight: FontWeight.bold, letterSpacing: 3, fontSize: AppClass().getMqWidth(context) * 0.06),
                       ),
                     ),
                     Padding(
@@ -67,11 +57,7 @@ class _ContactMobileState extends ConsumerState<ContactMobile> {
                         child: Text(
                           Strings.endTxt,
                           textAlign: TextAlign.center,
-                          style: GoogleFonts.roboto(
-                            color: AppColors().textLight,
-                            letterSpacing: 1,
-                            height: 1.5,
-                            fontSize: AppClass().getMqWidth(context) * 0.045),
+                          style: GoogleFonts.roboto(color: AppColors().textLight, letterSpacing: 1, height: 1.5, fontSize: AppClass().getMqWidth(context) * 0.045),
                         ),
                       ),
                     ),
@@ -84,19 +70,10 @@ class _ContactMobileState extends ConsumerState<ContactMobile> {
                         child: Container(
                           height: AppClass().getMqHeight(context) * 0.07,
                           width: AppClass().getMqWidth(context) * 0.5,
-                          decoration: BoxDecoration(
-                              color: Colors.transparent,
-                              borderRadius: BorderRadius.all(Radius.circular(3.0)),
-                              border: Border.all(
-                                  color: AppColors().neonColor, width: 1.5)),
+                          decoration: BoxDecoration(color: Colors.transparent, borderRadius: BorderRadius.all(Radius.circular(3.0)), border: Border.all(color: AppColors().neonColor, width: 1.5)),
                           child: Center(
                             child: Text('Say Hello!',
-                                style: TextStyle(
-                                    color: AppColors().neonColor,
-                                    fontSize: AppClass().getMqWidth(context) * 0.03,
-                                    letterSpacing: 1,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'sfmono')),
+                                style: TextStyle(color: AppColors().neonColor, fontSize: AppClass().getMqWidth(context) * 0.03, letterSpacing: 1, fontWeight: FontWeight.bold, fontFamily: 'sfmono')),
                           ),
                         ),
                       ),
@@ -110,19 +87,13 @@ class _ContactMobileState extends ConsumerState<ContactMobile> {
             children: [
               Text(
                 '''Built & Developed by Jeevanandham''',
-                style: TextStyle(
-                    color: AppColors().textColor,
-                    fontSize: 12,
-                    fontFamily: 'sfmono'),
+                style: TextStyle(color: AppColors().textColor, fontSize: 12, fontFamily: 'sfmono'),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   '''ref - Britney C''',
-                  style: TextStyle(
-                      color: AppColors().neonColor,
-                      fontSize: 12,
-                      fontFamily: 'sfmono'),
+                  style: TextStyle(color: AppColors().neonColor, fontSize: 12, fontFamily: 'sfmono'),
                 ),
               ),
             ],
@@ -139,21 +110,18 @@ class _ContactMobileState extends ConsumerState<ContactMobile> {
 
     final _formKey = GlobalKey<FormState>();
 
-    showDialog(context: context,
+    showDialog(
+        context: context,
         barrierDismissible: false,
         builder: (_) => AlertDialog(
-          backgroundColor: AppColors().primaryColor,
-          insetPadding: EdgeInsets.only(left: 15.0, right: 15.0),
-          contentPadding: EdgeInsets.zero,
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          title: Row(
-            children: [
-              Expanded(flex: 9, child: Text('Contact Me!')),
-              IconButton(onPressed: () => Navigator.pop(context), icon: Icon(Icons.close, color: AppColors().textColor))
-            ],
-          ),
-          content: Consumer(
-              builder: (context, ref, child) {
+              backgroundColor: AppColors().primaryColor,
+              insetPadding: EdgeInsets.only(left: 15.0, right: 15.0),
+              contentPadding: EdgeInsets.zero,
+              clipBehavior: Clip.antiAliasWithSaveLayer,
+              title: Row(
+                children: [Expanded(flex: 9, child: Text('Contact Me!')), IconButton(onPressed: () => Navigator.pop(context), icon: Icon(Icons.close, color: AppColors().textColor))],
+              ),
+              content: Consumer(builder: (context, ref, child) {
                 bool isLoading = ref.watch(progressProvider);
                 return Stack(
                   children: [
@@ -223,10 +191,10 @@ class _ContactMobileState extends ConsumerState<ContactMobile> {
                                 padding: const EdgeInsets.only(top: 8.0),
                                 child: Row(
                                   children: [
-                                    Text("Note: Please don't send trash msgs, atleast say hi :(", style: TextStyle(
-                                      fontSize: AppClass().getMqWidth(context) * 0.03,
-                                      color: Colors.grey
-                                    ),),
+                                    Text(
+                                      "Note: Please don't send trash msgs, atleast say hi :(",
+                                      style: TextStyle(fontSize: AppClass().getMqWidth(context) * 0.03, color: Colors.grey),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -242,7 +210,7 @@ class _ContactMobileState extends ConsumerState<ContactMobile> {
                                           if (_formKey.currentState!.validate()) {
                                             ref.read(progressProvider.notifier).state = true;
                                             AppClass().sendEmail(nameController.text, contactInfoController.text, msgController.text).then((value) {
-                                              if(value) {
+                                              if (value) {
                                                 Navigator.pop(context);
                                                 AppClass().showSnackBar('Message sent successfully', context: context);
                                               } else {
@@ -260,18 +228,9 @@ class _ContactMobileState extends ConsumerState<ContactMobile> {
                                           height: AppClass().getMqHeight(context) * 0.06,
                                           width: AppClass().getMqWidth(context) * 0.35,
                                           decoration: BoxDecoration(
-                                              color: Colors.transparent,
-                                              borderRadius: BorderRadius.all(Radius.circular(3.0)),
-                                              border: Border.all(
-                                                  color: AppColors().neonColor, width: 1.5)),
+                                              color: Colors.transparent, borderRadius: BorderRadius.all(Radius.circular(3.0)), border: Border.all(color: AppColors().neonColor, width: 1.5)),
                                           child: Center(
-                                            child: Text('Send',
-                                                style: TextStyle(
-                                                    color: AppColors().neonColor,
-                                                    fontSize: 13,
-                                                    letterSpacing: 1,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontFamily: 'sfmono')),
+                                            child: Text('Send', style: TextStyle(color: AppColors().neonColor, fontSize: 13, letterSpacing: 1, fontWeight: FontWeight.bold, fontFamily: 'sfmono')),
                                           ),
                                         ),
                                       ),
@@ -294,9 +253,7 @@ class _ContactMobileState extends ConsumerState<ContactMobile> {
                     ),
                   ],
                 );
-              }
-          ),
-        )
-    );
+              }),
+            ));
   }
 }

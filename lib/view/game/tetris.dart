@@ -13,6 +13,7 @@ import '../../resource/colors.dart';
 
 class Tetris extends ConsumerStatefulWidget {
   var scrollController;
+
   Tetris(this.scrollController, {Key? key}) : super(key: key);
 
   @override
@@ -29,85 +30,68 @@ class _TetrisState extends ConsumerState<Tetris> {
   int pos = 0, randInt = 0;
   int? nxtInt = null;
   var scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+          backgroundColor: Colors.transparent,
           body: Row(
-        children: [
-          Expanded(child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Column(
+              Expanded(
+                  child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  SvgPicture.asset("assets/svg/tetrisLogo.svg",
-                    color: AppColors().neonColor.withOpacity(0.5),
-                    width: AppClass().getMqWidth(context) * 0.15,
-                    height: AppClass().getMqHeight(context) * 0.15),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 15.0),
-                    child: Text("Tetris", style: GoogleFonts.rubikGlitch(
-                        color: Colors.white,
-                        fontSize: 31,
-                        letterSpacing: 1)),
+                  Column(
+                    children: [
+                      SvgPicture.asset("assets/svg/tetrisLogo.svg",
+                          color: AppColors().neonColor.withOpacity(0.5), width: AppClass().getMqWidth(context) * 0.15, height: AppClass().getMqHeight(context) * 0.15),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15.0),
+                        child: Text("Tetris", style: GoogleFonts.rubikGlitch(color: Colors.white, fontSize: 31, letterSpacing: 1)),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    color: AppColors().neonColor,
+                    margin: EdgeInsets.only(left: 10, right: 10),
+                    padding: EdgeInsets.only(top: 5, bottom: 5),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Column(
+                          children: [
+                            Text("High Score", style: GoogleFonts.robotoSlab(fontSize: 35, color: AppColors().primaryColor)),
+                            Text("-", style: GoogleFonts.robotoSlab(fontSize: 31, color: AppColors().primaryColor))
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    color: AppColors().neonColor,
+                    padding: EdgeInsets.only(top: 5, bottom: 5),
+                    margin: EdgeInsets.only(left: 10, right: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Column(
+                          children: [
+                            Text("Your Score", style: GoogleFonts.robotoSlab(fontSize: 35, color: AppColors().primaryColor)),
+                            Consumer(builder: (context, ref, child) {
+                              int currentScore = ref.watch(scoreProvider);
+                              return Text("${currentScore} pts", style: GoogleFonts.robotoSlab(fontSize: 31, color: AppColors().primaryColor));
+                            })
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ],
-              ),
-              Container(
-                color: AppColors().neonColor,
-                margin: EdgeInsets.only(left: 10, right: 10),
-                padding: EdgeInsets.only(top: 5, bottom: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Column(
-                      children: [
-                        Text("High Score", style: GoogleFonts.robotoSlab(
-                          fontSize: 35,
-                            color: AppColors().primaryColor
-                        )),
-                        Text("-", style: GoogleFonts.robotoSlab(
-                            fontSize: 31,
-                            color: AppColors().primaryColor
-                        ))
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                color: AppColors().neonColor,
-                padding: EdgeInsets.only(top: 5, bottom: 5),
-                margin: EdgeInsets.only(left: 10, right: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Column(
-                      children: [
-                        Text("Your Score", style: GoogleFonts.robotoSlab(
-                            fontSize: 35,
-                          color: AppColors().primaryColor
-                        )),
-                        Consumer(
-                          builder: (context, ref, child) {
-                            int currentScore = ref.watch(scoreProvider);
-                            return Text("${currentScore} pts", style: GoogleFonts.robotoSlab(
-                                fontSize: 31,
-                                color: AppColors().primaryColor
-                            ));
-                          }
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          )),
-          /*Expanded(
+              )),
+              /*Expanded(
               child: GridView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -128,177 +112,176 @@ class _TetrisState extends ConsumerState<Tetris> {
                       ),
                     );
                   })),*/
-          Expanded(
-              child: Container(
-            padding: const EdgeInsets.only(top: 8.0),
-            margin: EdgeInsets.only(left: 10),
-            child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: 20,
-                controller: scrollController,
-                itemBuilder: (con, i) {
-                  return Container(
-                    height: AppClass().getMqHeight(context) * 0.04,
-                    child: ListView.builder(
-                      itemCount: 10,
-                      scrollDirection: Axis.horizontal,
-                      shrinkWrap: true,
-                      itemBuilder: (con, j) {
-                        return Container(
-                          margin: EdgeInsets.all(0.1),
-                          color: () {
-                            if (ocupiedPos.contains((i * 10) + j + 1) ||
-                                currentBrick.contains((i * 10) + j + 1)) {
-                              return Colors.red;
-                            }
-                            return Colors.black12;
-                          }(),
-                          width: AppClass().getMqHeight(context) * 0.04,
-                          //child: Text("${(i * 10) + j + 1}"),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.white.withOpacity(0.2))
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  );
-                }),
-          )),
-          Expanded(
-            child: Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Expanded(child: Center(
-                    child: Column(
-                      children: [
-                        Image.asset((){
-                          switch(nxtInt) {
-                            case 0:
-                              return "assets/square.png";
-                            case 1:
-                              return "assets/line.png";
-                            case 2:
-                              return "assets/lleft.png";
-                            case 3:
-                              return "assets/lright.png";
-                            case 4:
-                              return "assets/na.png";
-                            default:
-                              return "assets/na.png";
-                          }
-                          return "";
-                        }(),
-                            height: AppClass().getMqHeight(context) * 0.2,
-                            width: AppClass().getMqWidth(context) * 0.2),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0),
-                          child: Text("Up Next", style: GoogleFonts.robotoSlab(
-                              fontSize: 31,
-                              color: Colors.white
-                          )),
-                        )
-                      ],
-                    ),
-                  )),
-                  Expanded(child: Center(child: Padding(
-                    padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Text("Play area is completely developed by myself with 0% googling and plugin usage. It still in the Beta level, so it may contains some bug. ", textAlign: TextAlign.center,),
-                  ))),
-                  Expanded(child: Padding(
-                    padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Row(
+              Expanded(
+                  child: Container(
+                padding: const EdgeInsets.only(top: 8.0),
+                margin: EdgeInsets.only(left: 10),
+                child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: 20,
+                    controller: scrollController,
+                    itemBuilder: (con, i) {
+                      return Container(
+                        height: AppClass().getMqHeight(context) * 0.04,
+                        child: ListView.builder(
+                          itemCount: 10,
+                          scrollDirection: Axis.horizontal,
+                          shrinkWrap: true,
+                          itemBuilder: (con, j) {
+                            return Container(
+                              margin: EdgeInsets.all(0.1),
+                              color: () {
+                                if (ocupiedPos.contains((i * 10) + j + 1) || currentBrick.contains((i * 10) + j + 1)) {
+                                  return Colors.red;
+                                }
+                                return Colors.black12;
+                              }(),
+                              width: AppClass().getMqHeight(context) * 0.04,
+                              //child: Text("${(i * 10) + j + 1}"),
+                              child: Container(
+                                decoration: BoxDecoration(border: Border.all(color: Colors.white.withOpacity(0.2))),
+                              ),
+                            );
+                          },
+                        ),
+                      );
+                    }),
+              )),
+              Expanded(
+                child: Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                          child: Center(
+                        child: Column(
                           children: [
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: ElevatedButton(
-                                    onPressed: () {
-                                      String leftBrick = currentBrick[0].toString();
-                                      if (leftBrick.substring(leftBrick.length - 1, leftBrick.length) != "1") {
-                                        if(!(bricks[randInt][pos]!.any((element) => ocupiedPos.contains(element - 1)))) {
-                                          brickDown("left");
-                                        }
-                                        currentBrick.clear();
-                                        currentBrick.addAll(bricks[randInt][pos]!);
-                                      }
-                                    },
-                                    child: const Text('Left')),
-                              ),
-                            ),
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: ElevatedButton(
-                                    onPressed: () {
-                                      String leftBrick = currentBrick[3].toString();
-                                      if (leftBrick.substring(leftBrick.length - 1, leftBrick.length) != "0") {
-                                        if(!(bricks[randInt][pos]!.any((element) => ocupiedPos.contains(element + 1)))) {
-                                          brickDown("right");
-                                        }
-                                        currentBrick.clear();
-                                        currentBrick.addAll(bricks[randInt][pos]!);
-                                      }
-                                    },
-                                    child: const Text('Right')),
-                              ),
-                            ),
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: ElevatedButton(
-                                    onPressed: () {
-                                      int val = pos;
-                                      if(!(bricks[randInt][ val < 3 ? val + 1 : val = 0]!.any((element) => ocupiedPos.contains(element)))) {
-                                        rotate();
-                                      }
-                                    },
-                                    child: const Text('Rotate')),
-                              ),
-                            ),
+                            Image.asset(() {
+                              switch (nxtInt) {
+                                case 0:
+                                  return "assets/square.png";
+                                case 1:
+                                  return "assets/line.png";
+                                case 2:
+                                  return "assets/lleft.png";
+                                case 3:
+                                  return "assets/lright.png";
+                                case 4:
+                                  return "assets/na.png";
+                                default:
+                                  return "assets/na.png";
+                              }
+                              return "";
+                            }(), height: AppClass().getMqHeight(context) * 0.2, width: AppClass().getMqWidth(context) * 0.2),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: Text("Up Next", style: GoogleFonts.robotoSlab(fontSize: 31, color: Colors.white)),
+                            )
                           ],
                         ),
-                        Row(
+                      )),
+                      Expanded(
+                          child: Center(
+                              child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                        child: Text(
+                          "Play area is completely developed by myself with 0% googling and plugin usage. It still in the Beta level, so it may contains some bug. ",
+                          textAlign: TextAlign.center,
+                        ),
+                      ))),
+                      Expanded(
+                          child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: ElevatedButton(
-                                    onPressed: () {
-                                      ref.refresh(scoreProvider);
-                                      widget.scrollController.scrollToIndex(4, preferPosition: AutoScrollPosition.begin);
-                                      startGame();
-                                    },
-                                    child: const Text('Start')),
-                              ),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: ElevatedButton(
+                                        onPressed: () {
+                                          String leftBrick = currentBrick[0].toString();
+                                          if (leftBrick.substring(leftBrick.length - 1, leftBrick.length) != "1") {
+                                            if (!(bricks[randInt][pos]!.any((element) => ocupiedPos.contains(element - 1)))) {
+                                              brickDown("left");
+                                            }
+                                            currentBrick.clear();
+                                            currentBrick.addAll(bricks[randInt][pos]!);
+                                          }
+                                        },
+                                        child: const Text('Left')),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: ElevatedButton(
+                                        onPressed: () {
+                                          String leftBrick = currentBrick[3].toString();
+                                          if (leftBrick.substring(leftBrick.length - 1, leftBrick.length) != "0") {
+                                            if (!(bricks[randInt][pos]!.any((element) => ocupiedPos.contains(element + 1)))) {
+                                              brickDown("right");
+                                            }
+                                            currentBrick.clear();
+                                            currentBrick.addAll(bricks[randInt][pos]!);
+                                          }
+                                        },
+                                        child: const Text('Right')),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: ElevatedButton(
+                                        onPressed: () {
+                                          int val = pos;
+                                          if (!(bricks[randInt][val < 3 ? val + 1 : val = 0]!.any((element) => ocupiedPos.contains(element)))) {
+                                            rotate();
+                                          }
+                                        },
+                                        child: const Text('Rotate')),
+                                  ),
+                                ),
+                              ],
                             ),
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: ElevatedButton(
-                                    onPressed: () {
-                                      quit();
-                                    },
-                                    child: const Text('Quit')),
-                              ),
-                            ),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: ElevatedButton(
+                                        onPressed: () {
+                                          ref.refresh(scoreProvider);
+                                          widget.scrollController.scrollToIndex(4, preferPosition: AutoScrollPosition.begin);
+                                          startGame();
+                                        },
+                                        child: const Text('Start')),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: ElevatedButton(
+                                        onPressed: () {
+                                          quit();
+                                        },
+                                        child: const Text('Quit')),
+                                  ),
+                                ),
+                              ],
+                            )
                           ],
-                        )
-                      ],
-                    ),
-                  )),
-                ],
-              ),
-            ),
-          )
-        ],
-      )),
+                        ),
+                      )),
+                    ],
+                  ),
+                ),
+              )
+            ],
+          )),
     );
   }
 
@@ -312,11 +295,13 @@ class _TetrisState extends ConsumerState<Tetris> {
     bricks = getDefaultBricks();
     currentBrick.addAll(getDefaultBricks()[randInt][pos]!);
     _timer = Timer.periodic(
-      const Duration(milliseconds: 500), (Timer timer) {
+      const Duration(milliseconds: 500),
+      (Timer timer) {
         checkClearRow();
         if (isGameOver()) {
           _timer!.cancel();
-          showDialog(context: context,
+          showDialog(
+              context: context,
               builder: (c) {
                 return AlertDialog(
                   title: const Text('Game Over'),
@@ -338,17 +323,11 @@ class _TetrisState extends ConsumerState<Tetris> {
               });
         } else {
           if (hasReachFloor == false && canGo == true) {
-            if (currentBrick[0] > 190 ||
-                currentBrick[1] > 190 ||
-                currentBrick[2] > 190 ||
-                currentBrick[3] > 190) {
+            if (currentBrick[0] > 190 || currentBrick[1] > 190 || currentBrick[2] > 190 || currentBrick[3] > 190) {
               hasReachFloor = true;
               return;
             }
-            if (ocupiedPos.contains(currentBrick[0] + 10) ||
-                ocupiedPos.contains(currentBrick[1] + 10) ||
-                ocupiedPos.contains(currentBrick[2] + 10) ||
-                ocupiedPos.contains(currentBrick[3] + 10)) {
+            if (ocupiedPos.contains(currentBrick[0] + 10) || ocupiedPos.contains(currentBrick[1] + 10) || ocupiedPos.contains(currentBrick[2] + 10) || ocupiedPos.contains(currentBrick[3] + 10)) {
               canGo = false;
               return;
             }
@@ -394,7 +373,7 @@ class _TetrisState extends ConsumerState<Tetris> {
     ref.read(scrollHandlerProvider.notifier).update((state) => true);
     ocupiedPos.clear();
     currentBrick.clear();
-    if(_timer != null) {
+    if (_timer != null) {
       _timer!.cancel();
     }
     ref.refresh(gameScreenProvider);
@@ -414,20 +393,16 @@ class _TetrisState extends ConsumerState<Tetris> {
     String secondBrick = bricks[randInt][tempPos]![2].toString();
     String thirdBrick = bricks[randInt][tempPos]![3].toString();
 
-    if(zeroBrick.substring(zeroBrick.length - 1, zeroBrick.length) != "1" &&
+    if (zeroBrick.substring(zeroBrick.length - 1, zeroBrick.length) != "1" &&
         zeroBrick.substring(zeroBrick.length - 1, zeroBrick.length) != "0" &&
-
         firstBrick.substring(firstBrick.length - 1, firstBrick.length) != "1" &&
         firstBrick.substring(firstBrick.length - 1, firstBrick.length) != "0" &&
-
         secondBrick.substring(secondBrick.length - 1, secondBrick.length) != "1" &&
         secondBrick.substring(secondBrick.length - 1, secondBrick.length) != "0" &&
-
         thirdBrick.substring(thirdBrick.length - 1, thirdBrick.length) != "1" &&
         thirdBrick.substring(thirdBrick.length - 1, thirdBrick.length) != "0") {
       pos = tempPos;
     }
-
   }
 
   static getDefaultBricks() {
@@ -460,13 +435,13 @@ class _TetrisState extends ConsumerState<Tetris> {
   }
 
   brickDown(type) {
-    for(int i = 0; i <= 3 ; i++) {
-      for(int j = 0; j <= 3; j++) {
-        if(type == "down") {
+    for (int i = 0; i <= 3; i++) {
+      for (int j = 0; j <= 3; j++) {
+        if (type == "down") {
           bricks[randInt][i]![j] = bricks[randInt][i]![j] + 10;
-        } else if(type == "left") {
-            bricks[randInt][i]![j] = bricks[randInt][i]![j] - 1;
-        } else if(type == "right") {
+        } else if (type == "left") {
+          bricks[randInt][i]![j] = bricks[randInt][i]![j] - 1;
+        } else if (type == "right") {
           bricks[randInt][i]![j] = bricks[randInt][i]![j] + 1;
         }
       }
@@ -483,7 +458,7 @@ class _TetrisState extends ConsumerState<Tetris> {
         ref.read(scoreProvider.notifier).state = ref.read(scoreProvider.notifier).state + 100;
 
         ocupiedPos.forEach((element) {
-          if(element < i*10) {
+          if (element < i * 10) {
             ocupiedPos[ocupiedPos.indexOf(element)] = element + 10;
           }
         });
@@ -501,7 +476,7 @@ class _TetrisState extends ConsumerState<Tetris> {
   }
 
   int getRandInt() {
-    if(nxtInt == null) {
+    if (nxtInt == null) {
       nxtInt = Random().nextInt(4);
     }
     randInt = nxtInt ?? 0;
@@ -509,5 +484,4 @@ class _TetrisState extends ConsumerState<Tetris> {
     setState(() {});
     return randInt;
   }
-
 }

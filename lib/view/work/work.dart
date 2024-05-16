@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/resource/responsive.dart';
-import 'package:portfolio/view/work/workWeb.dart';
 import 'package:portfolio/view/work/workMobile.dart';
 import 'package:portfolio/view/work/workTab.dart';
+import 'package:portfolio/view/work/workWeb.dart';
 
 class Work extends StatefulWidget {
   const Work({Key? key}) : super(key: key);

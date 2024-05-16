@@ -31,10 +31,7 @@ class _IntroMobileState extends State<IntroMobile> {
             children: [
               Text(
                 Strings.welcomeTxt,
-                style: TextStyle(
-                    color: AppColors().neonColor,
-                    fontSize: AppClass().getMqWidth(context) * 0.045,
-                    fontFamily: 'sfmono'),
+                style: TextStyle(color: AppColors().neonColor, fontSize: AppClass().getMqWidth(context) * 0.045, fontFamily: 'sfmono'),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 10.0),
@@ -91,26 +88,15 @@ class _IntroMobileState extends State<IntroMobile> {
                 padding: const EdgeInsets.only(top: 60.0),
                 child: InkWell(
                   onTap: () {
-                    widget.aScrollController.scrollToIndex(1,
-                        preferPosition: AutoScrollPosition.begin);
+                    widget.aScrollController.scrollToIndex(1, preferPosition: AutoScrollPosition.begin);
                   },
                   child: Container(
                     height: AppClass().getMqHeight(context) * 0.07,
                     width: AppClass().getMqWidth(context) * 0.5,
                     padding: EdgeInsets.all(10.0),
-                    decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius: BorderRadius.all(Radius.circular(3.0)),
-                        border: Border.all(
-                            color: AppColors().neonColor, width: 1.5)),
+                    decoration: BoxDecoration(color: Colors.transparent, borderRadius: BorderRadius.all(Radius.circular(3.0)), border: Border.all(color: AppColors().neonColor, width: 1.5)),
                     child: Center(
-                      child: Text('Check Out My Work!',
-                          style: TextStyle(
-                              color: AppColors().neonColor,
-                              fontSize: 13,
-                              letterSpacing: 1,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'sfmono')),
+                      child: Text('Check Out My Work!', style: TextStyle(color: AppColors().neonColor, fontSize: 13, letterSpacing: 1, fontWeight: FontWeight.bold, fontFamily: 'sfmono')),
                     ),
                   ),
                 ),
